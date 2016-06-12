@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      2016 计蒜之道 初赛 第二场 | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="官方题解
+联想公司的 logo 设计题目链接
+思路 - 计算几何可以想到若要外面这个大圆面积最小，则其要和已有的两个小圆相切，且切点分别在大圆到的一条直径两端，画一下图就可以发现，这条直径就在两个小圆圆心连线上，然后很容易就能求出大圆的半径
+代码12345678910111213141516171819202122232425262728293031323334353637383940414243">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016 计蒜之道 初赛 第二场 | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/06/12/2016-计蒜之道-初赛-第二场/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="官方题解
+联想公司的 logo 设计题目链接
+思路 - 计算几何可以想到若要外面这个大圆面积最小，则其要和已有的两个小圆相切，且切点分别在大圆到的一条直径两端，画一下图就可以发现，这条直径就在两个小圆圆心连线上，然后很容易就能求出大圆的半径
+代码12345678910111213141516171819202122232425262728293031323334353637383940414243">
+<meta property="og:updated_time" content="2016-06-12T16:42:33.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016 计蒜之道 初赛 第二场 | 留住了丶时间">
+<meta name="twitter:description" content="官方题解
+联想公司的 logo 设计题目链接
+思路 - 计算几何可以想到若要外面这个大圆面积最小，则其要和已有的两个小圆相切，且切点分别在大圆到的一条直径两端，画一下图就可以发现，这条直径就在两个小圆圆心连线上，然后很容易就能求出大圆的半径
+代码12345678910111213141516171819202122232425262728293031323334353637383940414243">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">2016 计蒜之道 初赛 第二场</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-12" class="post-meta__date date">2016-06-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/Contests/">Contests</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/排列组合/">排列组合</a>, <a class="tags-link" href="/tags/枚举/">枚举</a>, <a class="tags-link" href="/tags/莫比乌斯反演/">莫比乌斯反演</a>, <a class="tags-link" href="/tags/计算几何/">计算几何</a>, <a class="tags-link" href="/tags/计蒜客/">计蒜客</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://blog.jisuanke.com/?p=231" title="2016 计蒜之道 初赛 前三场题解" target="_blank" rel="external">官方题解</a></p>
+<h1 id="联想公司的-logo-设计"><a href="#联想公司的-logo-设计" class="headerlink" title="联想公司的 logo 设计"></a>联想公司的 logo 设计</h1><p><a href="http://nanti.jisuanke.com/t/11155" title="联想公司的 logo 设计" target="_blank" rel="external">题目链接</a></p>
+<h2 id="思路-计算几何"><a href="#思路-计算几何" class="headerlink" title="思路 - 计算几何"></a>思路 - 计算几何</h2><p>可以想到若要外面这个大圆面积最小，则其要和已有的两个小圆相切，且切点分别在大圆到的一条直径两端，画一下图就可以发现，这条直径就在两个小圆圆心连线上，然后很容易就能求出大圆的半径</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps=<span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> point &#123;</span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">    point(<span class="keyword">double</span> xx,<span class="keyword">double</span> yy):x(xx),y(yy) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">distance</span><span class="params">(<span class="keyword">const</span> point&amp; p1,<span class="keyword">const</span> point&amp; p2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">circle_area</span><span class="params">(<span class="keyword">const</span> <span class="keyword">double</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> PI*r*r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> l1,l2,a,circle_dis;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">3</span>==<span class="built_in">scanf</span>(<span class="string">"%lf%lf%lf"</span>,&amp;l1,&amp;l2,&amp;a)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a+eps&lt;<span class="number">0</span>) &#123;</span><br><span class="line">            a=-a;</span><br><span class="line">            swap(l1,l2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(a-eps&gt;<span class="number">360</span>) &#123;</span><br><span class="line">            a-=<span class="number">360</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a-eps&gt;<span class="number">180</span>) &#123;</span><br><span class="line">            a=<span class="number">360</span>-a;</span><br><span class="line">            swap(l1,l2);</span><br><span class="line">        &#125;</span><br><span class="line">        a=a*PI/<span class="number">180</span>;</span><br><span class="line">        circle_dis=distance(point(l1/<span class="number">2.0</span>,<span class="number">0</span>),point(l2*<span class="built_in">cos</span>(a)/<span class="number">2.0</span>,l2*<span class="built_in">sin</span>(a)/<span class="number">2.0</span>));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.7lf\n"</span>,circle_area(((l1+l2)/<span class="number">2.0</span>+circle_dis)/<span class="number">2.0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="联想的显示屏校准"><a href="#联想的显示屏校准" class="headerlink" title="联想的显示屏校准"></a>联想的显示屏校准</h1><p>题目链接：<a href="http://nanti.jisuanke.com/t/11165" title="联想的显示屏校准（简单）" target="_blank" rel="external">简单</a>、<a href="http://nanti.jisuanke.com/t/11166" title="联想的显示屏校准（中等）" target="_blank" rel="external">中等</a>、<a href="http://nanti.jisuanke.com/t/11167" title="联想的显示屏校准（困难）" target="_blank" rel="external">困难</a> </p>
+<h2 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h2><h3 id="思路-枚举"><a href="#思路-枚举" class="headerlink" title="思路 - 枚举"></a>思路 - 枚举</h3><p>数据范围很小，可以直接枚举不同的线段，但需要统计不再同一条直线上的线段，判重比较麻烦，所以不仅要存下斜率，还要保存当前线段所在的直线与格子最左上的交点的坐标，然后排序去重即可</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node &#123;</span><br><span class="line">    <span class="keyword">int</span> dx,dy,ux,uy;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(dx==<span class="number">0</span>&amp;&amp;a.dx==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> uy&lt;a.uy;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a.dx==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dy*a.dx&lt;a.dy*dx||(dy*a.dx==a.dy*dx&amp;&amp;(ux&lt;a.ux||(ux==a.ux&amp;&amp;uy&lt;a.uy)));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> == (<span class="keyword">const</span> Node&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(dx==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> a.dx==<span class="number">0</span>&amp;&amp;ux==a.ux&amp;&amp;ux==a.uy;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a.dx==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dy*a.dx==a.dy*dx&amp;&amp;ux==a.ux&amp;&amp;uy==a.uy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;p[<span class="number">1280005</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,cnt,ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isInside</span><span class="params">(<span class="keyword">int</span> r,<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>&lt;=r&amp;&amp;r&lt;n&amp;&amp;<span class="number">0</span>&lt;=c&amp;&amp;c&lt;m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T,dx,dy,ux,uy,xx,yy,gd;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;n;++j) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;m;++k) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">0</span>;l&lt;m;++l) &#123;</span><br><span class="line">                        dx=j-i;</span><br><span class="line">                        dy=l-k;</span><br><span class="line">                        <span class="keyword">if</span>(dy!=<span class="number">0</span>) &#123;</span><br><span class="line">                            gd=__gcd(dx,dy&lt;<span class="number">0</span>?-dy:dy);</span><br><span class="line">                            dx/=gd;</span><br><span class="line">                            dy/=gd;</span><br><span class="line">                            xx=i;</span><br><span class="line">                            yy=k;</span><br><span class="line">                            <span class="keyword">while</span>(isInside(xx,yy)) &#123;</span><br><span class="line">                                ux=xx;</span><br><span class="line">                                uy=yy;</span><br><span class="line">                                xx-=dx;</span><br><span class="line">                                yy-=dy;</span><br><span class="line">                            &#125;</span><br><span class="line">                            p[cnt].ux=ux;</span><br><span class="line">                            p[cnt].uy=uy;</span><br><span class="line">                            p[cnt].dx=dx;</span><br><span class="line">                            p[cnt++].dy=dy;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(p,p+cnt);</span><br><span class="line">        ans=<span class="number">1</span>+n+m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;cnt;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!(p[i]==p[i<span class="number">-1</span>])) &#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="中等（待完成）"><a href="#中等（待完成）" class="headerlink" title="中等（待完成）"></a>中等（待完成）</h2><h3 id="思路-排列组合"><a href="#思路-排列组合" class="headerlink" title="思路 - 排列组合"></a>思路 - 排列组合</h3><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><h2 id="困难（待完成）"><a href="#困难（待完成）" class="headerlink" title="困难（待完成）"></a>困难（待完成）</h2><h3 id="思路-莫比乌斯反演"><a href="#思路-莫比乌斯反演" class="headerlink" title="思路 - 莫比乌斯反演"></a>思路 - 莫比乌斯反演</h3><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/12/2016-计蒜之道-初赛-第二场/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
