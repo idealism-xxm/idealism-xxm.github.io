@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      51NOD-1358 浮波那契 （矩阵快速幂） | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(TengBieBie\)已经学习了很多关于斐波那切数列的性质，所以他感到一些些厌烦。现在他遇到了一个新的数列，这个数列叫做\(Float-Bonacci\)。这里有一个关于\(Float-Bonacci\)的定义。
+\begin{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51NOD-1358 浮波那契 （矩阵快速幂） | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/06/13/51NOD-1358/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(TengBieBie\)已经学习了很多关于斐波那切数列的性质，所以他感到一些些厌烦。现在他遇到了一个新的数列，这个数列叫做\(Float-Bonacci\)。这里有一个关于\(Float-Bonacci\)的定义。
+\begin{">
+<meta property="og:updated_time" content="2016-06-13T16:08:33.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="51NOD-1358 浮波那契 （矩阵快速幂） | 留住了丶时间">
+<meta name="twitter:description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(TengBieBie\)已经学习了很多关于斐波那切数列的性质，所以他感到一些些厌烦。现在他遇到了一个新的数列，这个数列叫做\(Float-Bonacci\)。这里有一个关于\(Float-Bonacci\)的定义。
+\begin{">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">51NOD-1358 浮波那契 （矩阵快速幂）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-13" class="post-meta__date date">2016-06-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/矩阵快速幂/">矩阵快速幂</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/51NOD/">51NOD</a>, <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/矩阵快速幂/">矩阵快速幂</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1358" title="51NOD-1358 浮波那契" target="_blank" rel="external">题目链接</a></p>
+<h1 id="1405-树的距离之和"><a href="#1405-树的距离之和" class="headerlink" title="1405 树的距离之和"></a>1405 树的距离之和</h1><p>\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>\(TengBieBie\)已经学习了很多关于斐波那切数列的性质，所以他感到一些些厌烦。现在他遇到了一个新的数列，这个数列叫做\(Float-Bonacci\)。这里有一个关于\(Float-Bonacci\)的定义。</p>
+<p>\begin{equation}<br>    \label{Dirichlet}FB(n)=<br>    \begin{cases}<br>        1, &amp; x &lt;=4 \\<br>        0, &amp; \text{ otherwise }<br>    \end{cases}<br>\end{equation}</p>
+<p>对于一个具体的\(n，TengBieBie想要快速计算FB(n)\).<br>但是\(TengBieBie对FB\)的了解非常少，所以他向你求助。<br>你的任务是计算\(FB(n)。FB(n)可能非常大，请输出FB(n)%1,000,000,007 (1e9+7)\)即可。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入共一行，在一行中给出一个整数\(n (1&lt;=n&lt;=1,000,000,000)。\)</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于每一个\(n，在一行中输出FB(n)%1,000,000,007 (1e9+7)。\)</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>5</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>2</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由于只有一位小数，所以可以设新数列\(F(10*n)=FB(n)\)，将小数计入（设\(F(5*n)=FB(n)\)也可以，不过没有那么直观）<br>则有递推式：\(F(x)=F(x-10)+F(x-34)\)，然后用矩阵快速幂即可</p>
+<p><strong>注意：系数矩阵的大小与矩阵快速幂的次方数有关</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">34</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> MOD=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Matrix&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span>  m[MAXN][MAXN];</span><br><span class="line">&#125;P,E,tmp;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">matrixmul</span><span class="params">(<span class="keyword">const</span> Matrix&amp; a,<span class="keyword">const</span> Matrix&amp; b)</span> </span>&#123;<span class="comment">//矩阵乘法</span></span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    Matrix c;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; MAXN; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; MAXN;j++) &#123;</span><br><span class="line">            c.m[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; MAXN; k++) &#123;</span><br><span class="line">                c.m[i][j] = (c.m[i][j] + a.m[i][k] * b.m[k][j])%MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">quickpow</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">    Matrix m = P, b = E;</span><br><span class="line">    <span class="keyword">while</span> (n &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &amp; <span class="number">1</span>) &#123;</span><br><span class="line">            b = matrixmul(b,m);</span><br><span class="line">        &#125;</span><br><span class="line">        n = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        m = matrixmul(m,m);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;<span class="comment">//初始化单位矩阵和系数矩阵</span></span><br><span class="line">    <span class="built_in">memset</span>(E.m,<span class="number">0</span>,<span class="keyword">sizeof</span>(E.m));</span><br><span class="line">    <span class="built_in">memset</span>(P.m,<span class="number">0</span>,<span class="keyword">sizeof</span>(P.m));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;MAXN<span class="number">-1</span>;++i) &#123;</span><br><span class="line">        E.m[i][i]=<span class="number">1</span>;</span><br><span class="line">        P.m[i+<span class="number">1</span>][i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    E.m[MAXN<span class="number">-1</span>][MAXN<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    P.m[MAXN<span class="number">-1</span><span class="number">-10</span>+<span class="number">1</span>][MAXN<span class="number">-1</span>]=P.m[MAXN<span class="number">-1</span><span class="number">-34</span>+<span class="number">1</span>][MAXN<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> n,ans;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%I64d"</span>,&amp;n)) &#123;</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        tmp=quickpow(<span class="number">10</span>*n<span class="number">-7</span>);<span class="comment">//新数列是从7开始，所以需要减去没有出现的7个；若令MAXN=40，则新数列从1开始，则只需减去1，即初始不需要乘以系数矩阵</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;MAXN;++i) &#123;</span><br><span class="line">            ans=(ans+tmp.m[i][<span class="number">0</span>])%MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/13/51NOD-1358/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

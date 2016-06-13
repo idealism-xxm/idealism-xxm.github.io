@@ -7,7 +7,7 @@
     
 
     <title>
-      51NOD-1154 回文串划分（DP） | 留住了丶时间 
+      51NOD-1154 回文串划分 （DP） | 留住了丶时间 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -21,16 +21,16 @@
 Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
 \(a|bb|aabaa - 3 个回文串\)\(a|bb|a|aba|a - 5 个回文串\)\(a|b|b|a|a|b|a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51NOD-1154 回文串划分（DP） | 留住了丶时间">
+<meta property="og:title" content="51NOD-1154 回文串划分 （DP） | 留住了丶时间">
 <meta property="og:url" content="http://idealism-xxm.github.io/2016/06/13/51NOD-1154/index.html">
 <meta property="og:site_name" content="留住了丶时间">
 <meta property="og:description" content="题目链接
 1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
 Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
 \(a|bb|aabaa - 3 个回文串\)\(a|bb|a|aba|a - 5 个回文串\)\(a|b|b|a|a|b|a">
-<meta property="og:updated_time" content="2016-06-13T10:13:58.247Z">
+<meta property="og:updated_time" content="2016-06-13T15:56:53.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51NOD-1154 回文串划分（DP） | 留住了丶时间">
+<meta name="twitter:title" content="51NOD-1154 回文串划分 （DP） | 留住了丶时间">
 <meta name="twitter:description" content="题目链接
 1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
 Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
@@ -217,7 +217,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">51NOD-1154 回文串划分（DP）</h1>
+    <h1 class="post-title">51NOD-1154 回文串划分 （DP）</h1>
 
     
 
@@ -248,13 +248,15 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1154" title="51NOD-1405 树的距离之和" target="_blank" rel="external">题目链接</a></p>
+    <p><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1154" title="51NOD-1154 回文串划分（DP）" target="_blank" rel="external">题目链接</a></p>
 <h1 id="1405-树的距离之和"><a href="#1405-树的距离之和" class="headerlink" title="1405 树的距离之和"></a>1405 树的距离之和</h1><p>\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]</p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>\(有一个字符串S，求S最少可以被划分为多少个回文串。\)<br>\(例如：abbaabaa，有多种划分方式。\)</p>
 <p>\(a|bb|aabaa - 3 个回文串\)<br>\(a|bb|a|aba|a - 5 个回文串\)<br>\(a|b|b|a|a|b|a|a - 8 个回文串\)</p>
 <p>\(其中第1种划分方式的划分数量最少。\)</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>1 2<br>3 2<br>4 2</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>5<br>3<br>5<br>5</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入字符串\(S(S的长度&lt;= 5000)。\)</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最少的划分数量。</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>abbaabaa</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>\(设dp[i]表示前i个字符回文划分的最小值\)<br>则可得转移方程：若子串\(s[j]…s[i]\)是回文串，则\(dp[i]=min(dp[i],dp[j-1]+1)\)<br>①很容易就能想到直接判断\(s[j]…s[i]\)是否为回文串，复杂度为\(O(n)\)，则总复杂度为：\(O(n^3)\)<br>②也可以用\(O(n^2)的时间预处理出以i开始长度为j的子串是否为回文子串\)，然后\(O(1)\)判断，则总复杂度为：\(O(n^2)\)</p>
 <p>但是代码交上去，跑的时间很奇怪，\(O(n^2)的跑了800ms多，O(n^3)的才跑了200ms\)不到</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="O-n-3"><a href="#O-n-3" class="headerlink" title="O(n^3)"></a>O(n^3)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">5005</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[MAXN];</span><br><span class="line"><span class="keyword">int</span> len,dp[MAXN];<span class="comment">//dp[i]表示前i个字符回文划分的最小值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[l]!=s[r]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ++l;</span><br><span class="line">        --r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>)) &#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;++i) &#123;</span><br><span class="line">            dp[i]=INF;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(judge(j,i)) &#123;<span class="comment">//如果子串s[j]...s[i]是回文的话，更新dp[i]</span></span><br><span class="line">                    dp[i]=min(dp[i],dp[j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[len]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
