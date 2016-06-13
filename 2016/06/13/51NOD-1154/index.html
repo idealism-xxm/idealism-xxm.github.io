@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      51NOD-1154 回文串划分（DP） | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
+\(a|bb|aabaa - 3 个回文串\)\(a|bb|a|aba|a - 5 个回文串\)\(a|b|b|a|a|b|a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51NOD-1154 回文串划分（DP） | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/06/13/51NOD-1154/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
+\(a|bb|aabaa - 3 个回文串\)\(a|bb|a|aba|a - 5 个回文串\)\(a|b|b|a|a|b|a">
+<meta property="og:updated_time" content="2016-06-13T10:13:58.247Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="51NOD-1154 回文串划分（DP） | 留住了丶时间">
+<meta name="twitter:description" content="题目链接
+1405 树的距离之和\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]
+Description\(有一个字符串S，求S最少可以被划分为多少个回文串。\)\(例如：abbaabaa，有多种划分方式。\)
+\(a|bb|aabaa - 3 个回文串\)\(a|bb|a|aba|a - 5 个回文串\)\(a|b|b|a|a|b|a">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">51NOD-1154 回文串划分（DP）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-13" class="post-meta__date date">2016-06-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/DP/">DP</a>, <a class="categories-link" href="/categories/ACM/DP/区间DP/">区间DP</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/51NOD/">51NOD</a>, <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/区间DP/">区间DP</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1154" title="51NOD-1405 树的距离之和" target="_blank" rel="external">题目链接</a></p>
+<h1 id="1405-树的距离之和"><a href="#1405-树的距离之和" class="headerlink" title="1405 树的距离之和"></a>1405 树的距离之和</h1><p>\[基准时间限制：1 秒\ \ 空间限制：131072 KB\  \ 分值: 40\ \ 难度：4级算法题\]</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>\(有一个字符串S，求S最少可以被划分为多少个回文串。\)<br>\(例如：abbaabaa，有多种划分方式。\)</p>
+<p>\(a|bb|aabaa - 3 个回文串\)<br>\(a|bb|a|aba|a - 5 个回文串\)<br>\(a|b|b|a|a|b|a|a - 8 个回文串\)</p>
+<p>\(其中第1种划分方式的划分数量最少。\)</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>1 2<br>3 2<br>4 2</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>5<br>3<br>5<br>5</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>\(设dp[i]表示前i个字符回文划分的最小值\)<br>则可得转移方程：若子串\(s[j]…s[i]\)是回文串，则\(dp[i]=min(dp[i],dp[j-1]+1)\)<br>①很容易就能想到直接判断\(s[j]…s[i]\)是否为回文串，复杂度为\(O(n)\)，则总复杂度为：\(O(n^3)\)<br>②也可以用\(O(n^2)的时间预处理出以i开始长度为j的子串是否为回文子串\)，然后\(O(1)\)判断，则总复杂度为：\(O(n^2)\)</p>
+<p>但是代码交上去，跑的时间很奇怪，\(O(n^2)的跑了800ms多，O(n^3)的才跑了200ms\)不到</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="O-n-3"><a href="#O-n-3" class="headerlink" title="O(n^3)"></a>O(n^3)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">5005</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[MAXN];</span><br><span class="line"><span class="keyword">int</span> len,dp[MAXN];<span class="comment">//dp[i]表示前i个字符回文划分的最小值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[l]!=s[r]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ++l;</span><br><span class="line">        --r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>)) &#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;++i) &#123;</span><br><span class="line">            dp[i]=INF;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(judge(j,i)) &#123;<span class="comment">//如果子串s[j]...s[i]是回文的话，更新dp[i]</span></span><br><span class="line">                    dp[i]=min(dp[i],dp[j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[len]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="O-n-2"><a href="#O-n-2" class="headerlink" title="O(n^2)"></a>O(n^2)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">5005</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[MAXN];</span><br><span class="line"><span class="keyword">int</span> len,dp[MAXN];<span class="comment">//dp[i]表示前i个字符回文划分的最小值</span></span><br><span class="line"><span class="keyword">bool</span> flag[MAXN][MAXN];<span class="comment">//flag[i][j]表示从i开始的长度为j的子串是否为回文串</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">()</span> </span>&#123;<span class="comment">//区间dp初始化flag[i][j]</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;++i) &#123;<span class="comment">//初始化从s[i]本身和空串为一个回文子串</span></span><br><span class="line">        flag[i][<span class="number">0</span>]=flag[i][<span class="number">1</span>]=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=len;++j) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len-j+<span class="number">1</span>;i&gt;=<span class="number">1</span>;--i) &#123;</span><br><span class="line">            flag[i][j]=s[i]==s[i+j<span class="number">-1</span>]&amp;&amp;flag[i+<span class="number">1</span>][j<span class="number">-2</span>];<span class="comment">//只有当最外面两个字母相等，且内层是回文子串时，当前才为回文子串</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>)) &#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">        judge();</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;++i) &#123;</span><br><span class="line">            dp[i]=INF;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(flag[j][i-j+<span class="number">1</span>]) &#123;<span class="comment">//如果子串s[j]...s[i]是回文的话，更新dp[i]</span></span><br><span class="line">                    dp[i]=min(dp[i],dp[j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[len]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/13/51NOD-1154/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
