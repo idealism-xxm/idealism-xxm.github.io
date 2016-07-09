@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Codeforces Round-#361 (Div. 2) [Codeforces689] | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接官方题解
+A. Mike and Cellphone题目大意在常用的手机数字键盘，给定一个拨号序列，问这个拨号序列的手势移动是否唯一？
+思路 - 模拟按照题意判断即可。
+代码1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstring&amp;gt;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round-#361 (Div. 2) [Codeforces689] | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/07/09/Codeforces-Round361 (Div. 2)[Codeforces689]/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接官方题解
+A. Mike and Cellphone题目大意在常用的手机数字键盘，给定一个拨号序列，问这个拨号序列的手势移动是否唯一？
+思路 - 模拟按照题意判断即可。
+代码1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstring&amp;gt;#">
+<meta property="og:updated_time" content="2016-07-09T02:06:08.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces Round-#361 (Div. 2) [Codeforces689] | 留住了丶时间">
+<meta name="twitter:description" content="题目链接官方题解
+A. Mike and Cellphone题目大意在常用的手机数字键盘，给定一个拨号序列，问这个拨号序列的手势移动是否唯一？
+思路 - 模拟按照题意判断即可。
+代码1234567891011121314151617181920212223242526272829303132333435#include &amp;lt;cstdio&amp;gt;#include &amp;lt;cstring&amp;gt;#">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Codeforces Round-#361 (Div. 2) [Codeforces689]</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-09" class="post-meta__date date">2016-07-09</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/Contests/">Contests</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/BFS/">BFS</a>, <a class="tags-link" href="/tags/Codeforces/">Codeforces</a>, <a class="tags-link" href="/tags/Dijkstra/">Dijkstra</a>, <a class="tags-link" href="/tags/模拟/">模拟</a>, <a class="tags-link" href="/tags/贪心/">贪心</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://codeforces.com/contest/689" title="Codeforces Round #361 (Div. 2)" target="_blank" rel="external">题目链接</a><br><a href="http://codeforces.com/blog/entry/45912" title="Codeforces Round #361 (Div. 2) Editorial" target="_blank" rel="external">官方题解</a></p>
+<h1 id="A-Mike-and-Cellphone"><a href="#A-Mike-and-Cellphone" class="headerlink" title="A. Mike and Cellphone"></a>A. Mike and Cellphone</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>在常用的手机数字键盘，给定一个拨号序列，问这个拨号序列的手势移动是否唯一？</p>
+<h2 id="思路-模拟"><a href="#思路-模拟" class="headerlink" title="思路 - 模拟"></a>思路 - 模拟</h2><p>按照题意判断即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="keyword">int</span> n,mnr,mxr,mnc,mxc;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">11</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> r[<span class="number">11</span>]=&#123;<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> c[<span class="number">11</span>]=&#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">        flag=<span class="literal">false</span>;</span><br><span class="line">        mnr=mnc=<span class="number">5</span>;</span><br><span class="line">        mxr=mxc=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            mnr=min(mnr,r[s[i]-<span class="string">'0'</span>]);<span class="comment">//找到最小的行</span></span><br><span class="line">            <span class="keyword">if</span>(s[i]!=<span class="string">'8'</span>) &#123;<span class="comment">//当不等于8时才更新最大的行，否则可以往下移动填补0的位置</span></span><br><span class="line">                mxr=max(mxr,r[s[i]-<span class="string">'0'</span>]);<span class="comment">//找到最大的行</span></span><br><span class="line">            &#125;</span><br><span class="line">            mnc=min(mnc,c[s[i]-<span class="string">'0'</span>]);<span class="comment">//找到最小的列</span></span><br><span class="line">            mxc=max(mxc,c[s[i]-<span class="string">'0'</span>]);<span class="comment">//找到最大的列</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(mxr-mnr==<span class="number">3</span>||(mxr==<span class="number">3</span>&amp;&amp;mnr==<span class="number">1</span>&amp;&amp;mxc-mnc==<span class="number">2</span>)) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-Mike-and-Shortcuts"><a href="#B-Mike-and-Shortcuts" class="headerlink" title="B. Mike and Shortcuts"></a>B. Mike and Shortcuts</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h2><p>在一个数轴上，有\(1~n共n\)个点，\(i到j\)的花费为\(|i-j|\)，并且每一点\(i到a_i\)的花费为1，求\(1到其他点的最小花费？\)</p>
+<h2 id="思路-Dijkstra-BFS"><a href="#思路-Dijkstra-BFS" class="headerlink" title="思路 - Dijkstra||BFS"></a>思路 - Dijkstra||BFS</h2><p>能立刻想到单源最短路，就是按照题意建图就会超时。仔细分析后发现直接对每个点\(i\)建立三条边即可，即\(i→i\)-\(1 、i→i\)+\(1 、i→a_i\)三条边，然后跑\(O(nlogn)的Dijkstra\)即可，看了题解才发现，由于边的权值都是\(1\)，所以直接\(BFS\)即可。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node &#123;</span><br><span class="line">    <span class="keyword">int</span> e,w;</span><br><span class="line"></span><br><span class="line">    Node(<span class="keyword">int</span> ee=<span class="number">0</span>,<span class="keyword">int</span> ww=<span class="number">0</span>):e(ee),w(ww) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> w&gt;a.w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;cur;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,e,g[<span class="number">200005</span>][<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">200005</span>];</span><br><span class="line">priority_queue&lt;Node&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">4</span>]=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dc[<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    q.push(Node(<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">        cur=q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(dis[cur.e]==<span class="number">0x3f3f3f3f</span>) &#123;</span><br><span class="line">            dis[cur.e]=cur.w;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;++i) &#123;</span><br><span class="line">                e=g[cur.e][i];</span><br><span class="line">                <span class="keyword">if</span>(cur.w+<span class="number">1</span>&lt;dis[e]) &#123;</span><br><span class="line">                    q.push(Node(e,cur.w+<span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            g[i][<span class="number">0</span>]=i+<span class="number">1</span>;</span><br><span class="line">            g[i][<span class="number">1</span>]=i<span class="number">-1</span>;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;g[i][<span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        g[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        g[n][<span class="number">0</span>]=n;</span><br><span class="line">        Dijkstra();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,dis[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dis[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-Mike-and-Chocolate-Thieves"><a href="#C-Mike-and-Chocolate-Thieves" class="headerlink" title="C. Mike and Chocolate Thieves"></a>C. Mike and Chocolate Thieves</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h2><p>有\(4\)个小偷，第\(1个小偷会偷a\)块巧克力，第\(i,(2&lt;=i&lt;=4)\)个小偷会\(a*k^{i-1},(k&gt;1)\)块巧克力，每个小偷都有一个最多能装\(n\)块巧克力的袋子，且\(a、k、n\)均未知，一直共有\(m\)种方法偷巧克力，求\(n\)的最小值？</p>
+<h2 id="思路-二分"><a href="#思路-二分" class="headerlink" title="思路 - 二分"></a>思路 - 二分</h2><p>可以发现\(m随着n\)的增大而增大（或不变），则可以二分\(n\)，然后枚举\(k\)即可，复杂度为\(O(10^{16} * \sqrt[3]{m} )\)</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> m,l,r,mid,sum,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%I64d"</span>,&amp;m)) &#123;</span><br><span class="line">        l=<span class="number">8</span>;</span><br><span class="line">        r=<span class="number">10000000000000000L</span>L;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r) &#123;</span><br><span class="line">            sum=<span class="number">0</span>;</span><br><span class="line">            mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="built_in">pow</span>(mid,<span class="number">0.33333333</span>)+<span class="number">1</span>;k&gt;<span class="number">1</span>;--k) &#123;</span><br><span class="line">                sum+=mid/(k*k*k);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;m) &#123;</span><br><span class="line">                l=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                r=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(k=<span class="built_in">pow</span>(l,<span class="number">0.33333333</span>)+<span class="number">1</span>;k&gt;<span class="number">1</span>;--k) &#123;</span><br><span class="line">            sum+=l/(k*k*k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,sum==m?l:<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/09/Codeforces-Round361 (Div. 2)[Codeforces689]/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
