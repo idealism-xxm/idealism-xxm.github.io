@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      2016 Multi University Training Contest 3 | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="官方题解
+1001. Sqrt Bo题目链接
+题目大意设f(n)=\(floor(\sqrt{n}\)，\(f^{1} (n)=f(n)\)，\(f^{y} (n)=f(f^{y-1} (n))\)，求使\(f^{y} (n)=1\)时\(y\)的最小值？
+思路 - 数学首先可以确定上限值：①\(f^{1} (x)=1\)时，\(x\)最大为\( (1+1) ^ {2} - 1 = 3\)②\(f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016 Multi University Training Contest 3 | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/07/26/2016-Multi-University-Training-Contest 3/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="官方题解
+1001. Sqrt Bo题目链接
+题目大意设f(n)=\(floor(\sqrt{n}\)，\(f^{1} (n)=f(n)\)，\(f^{y} (n)=f(f^{y-1} (n))\)，求使\(f^{y} (n)=1\)时\(y\)的最小值？
+思路 - 数学首先可以确定上限值：①\(f^{1} (x)=1\)时，\(x\)最大为\( (1+1) ^ {2} - 1 = 3\)②\(f">
+<meta property="og:updated_time" content="2016-07-27T06:04:25.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016 Multi University Training Contest 3 | 留住了丶时间">
+<meta name="twitter:description" content="官方题解
+1001. Sqrt Bo题目链接
+题目大意设f(n)=\(floor(\sqrt{n}\)，\(f^{1} (n)=f(n)\)，\(f^{y} (n)=f(f^{y-1} (n))\)，求使\(f^{y} (n)=1\)时\(y\)的最小值？
+思路 - 数学首先可以确定上限值：①\(f^{1} (x)=1\)时，\(x\)最大为\( (1+1) ^ {2} - 1 = 3\)②\(f">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">2016 Multi University Training Contest 3</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-26" class="post-meta__date date">2016-07-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/多校/">多校</a>, <a class="categories-link" href="/categories/ACM/多校/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/多校/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/HDU/">HDU</a>, <a class="tags-link" href="/tags/博弈论/">博弈论</a>, <a class="tags-link" href="/tags/多校/">多校</a>, <a class="tags-link" href="/tags/数学/">数学</a>, <a class="tags-link" href="/tags/枚举/">枚举</a>, <a class="tags-link" href="/tags/贪心/">贪心</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://bestcoder.hdu.edu.cn/blog/2016-multi-university-training-contest-3-solutions-by-%E7%BB%8D%E5%85%B4%E4%B8%80%E4%B8%AD/" title="2016 Multi-University Training Contest 3 solutions BY 绍兴一中" target="_blank" rel="external">官方题解</a></p>
+<h1 id="1001-Sqrt-Bo"><a href="#1001-Sqrt-Bo" class="headerlink" title="1001. Sqrt Bo"></a>1001. Sqrt Bo</h1><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5752" title="HDU-5752 Sqrt Bo" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>设f(n)=\(floor(\sqrt{n}\)，\(f^{1} (n)=f(n)\)，\(f^{y} (n)=f(f^{y-1} (n))\)，求使\(f^{y} (n)=1\)时\(y\)的最小值？</p>
+<h2 id="思路-数学"><a href="#思路-数学" class="headerlink" title="思路 - 数学"></a>思路 - 数学</h2><p>首先可以确定上限值：<br>①\(f^{1} (x)=1\)时，\(x\)最大为\( (1+1) ^ {2} - 1 = 3\)<br>②\(f^{2} (x)=1\)时，\(x\)最大为\( (1+1) ^ {4} - 1 = 15\)<br>②\(f^{3} (x)=1\)时，\(x\)最大为\( (1+1) ^ {8} - 1 = 255\)<br>②\(f^{4} (x)=1\)时，\(x\)最大为\( (1+1) ^ {16} - 1 = 65535\)<br>②\(f^{5} (x)=1\)时，\(x\)最大为\( (1+1) ^ {32} - 1 = 4294967295\)<br>然后\(x&gt;4294967295||x==0\)时，输出\(TAT\)，其余的找其不大于上限的下标即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> times[<span class="number">9</span>][<span class="number">11</span>]=&#123;<span class="string">"1"</span>,<span class="string">"3"</span>,<span class="string">"15"</span>,<span class="string">"255"</span>,<span class="string">"65535"</span>,<span class="string">"4294967295"</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> l[<span class="number">9</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bigger</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(len!=l[i]) &#123;</span><br><span class="line">        <span class="keyword">return</span> len&gt;l[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strcmp</span>(s,times[i])&gt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s)) &#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(s);</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">1</span>&amp;&amp;s[<span class="number">0</span>]==<span class="string">'0'</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"TAT\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(bigger(i)&amp;&amp;i&lt;<span class="number">6</span>) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="number">6</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"TAT\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1002-Permutation-Bo"><a href="#1002-Permutation-Bo" class="headerlink" title="1002. Permutation Bo"></a>1002. Permutation Bo</h1><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5753" title="HDU-5753 Permutation Bo" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定\(n\)个数，第\(i\)个数为\(c_i\)，\(h_1,…,h_n\)是\(1~n\)的一个排列，\(h_0=h<em>n=0\)，设\(f(h)=\sum</em> {i=1} ^{n} c_i * [h<em>i &gt; h</em>{i-1}&amp;&amp;h<em>i&gt;h</em>{i+1}]\)，其中\([condition]=(condition==true?1:0)\)，计算\(f(h)\)的期望。</p>
+<h2 id="思路-枚举"><a href="#思路-枚举" class="headerlink" title="思路 - 枚举"></a>思路 - 枚举</h2><p>对于\(c_i\)可以计算\(c_i\)对答案的贡献，枚举第\(i(i!=1&amp;&amp;i!=n)\)位的数为\(j\)，则第\(i-1\)位有\(j-1\)种取法，第\(i+1\)位有\(j-2\)种取法，剩余的\(n-3\)个数全排列，分母为\(n!\)，则\(c_i\)对答案的贡献为：\(\frac {c_i*(j-1)*(j-2)} {n*(n-1)*(n-2) } \)，第\(i\)位和第\(n\)位特殊处理一下就好。<br>复杂度为：\(O(n^2)\)</p>
+<p>官方题解直接考虑当前位的前后两个位，这样在两端时，\(c_i\)对答案的贡献为\(\frac {c_i} {2}\)，不在两端时，\(c_i\)对答案的贡献为\(\frac {c_i} {3}\)。<br>复杂度为：\(O(n)\)</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,c;</span><br><span class="line"><span class="keyword">double</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.6lf\n"</span>,<span class="number">1.0</span>*c);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=n;++j) &#123;</span><br><span class="line">            ans+=<span class="number">1.0</span>*c*(j<span class="number">-1</span>)/(n*(n<span class="number">-1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">3</span>;j&lt;=n;++j) &#123;</span><br><span class="line">                ans+=<span class="number">1.0</span>*c*(j<span class="number">-1</span>)*(j<span class="number">-2</span>)/(n*(n<span class="number">-1</span>)*(n<span class="number">-2</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=n;++j) &#123;</span><br><span class="line">            ans+=<span class="number">1.0</span>*c*(j<span class="number">-1</span>)/(n*(n<span class="number">-1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.6lf\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1003-Life-Winner-Bo"><a href="#1003-Life-Winner-Bo" class="headerlink" title="1003. Life Winner Bo"></a>1003. Life Winner Bo</h1><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5754" title="HDU-5754 Life Winner Bo" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个\(n*m\)的棋盘，初始有王、车、骑士、皇后死者之一在左上角，两人轮流移动棋子，移动方式同国际想起移动方式相同，但是每次移动必须往右下移动，即行和列均不能减少，问先手是否必胜，或者是平局。</p>
+<h2 id="思路-博弈论"><a href="#思路-博弈论" class="headerlink" title="思路 - 博弈论"></a>思路 - 博弈论</h2><p>由于是对称的，所以只讨论\(n&lt;=m\)时的棋盘。<br>①王（米字1步，无平局）：<br>这样的棋子是一道原题，结论是：行数或列数有一个偶数（即\(n%2==0||m%2==0\)）时就是先手必赢，否则先手必输。<br>可以画一张很大的棋盘，通过\(PN分析\)往前推，很容易就能发现这个结论。<br>②车（十字无限，无平局）：<br>通过画图也很容易就能发现：\(n==m\)时，先手必输，否则先手必赢。<br>③骑士（日字无限，有平局）：<br>首先可以明白走不到的地方一定是平局，其次在看所有能走到的地方，人工跑一边最有走发。<br>这个最麻烦，刚开始图较小，找了个错误的规律，大概推到第\(6\)条（\((1,1)\)算第一条左斜线）落点形成的左斜线时可以确定规律：\((n+m)%3==2&amp;&amp;n+1==m\)时，先手必胜，即第偶数条左斜线的最中间两个点是先手必胜点；\(n==m&amp;&amp;n%3==1\)，后手必胜，即第奇数条左斜线的最中间一个点是后手必胜点。<br>④皇后（米字无限，无平局）：<br>没有抽象成取石子游戏，但是通过画图找到所有的必败点时的棋盘大小\(n,m\)满足\(n-1,m-1\)是威佐夫博弈的奇异局势。<br>看了题解后才发现可以抽象成威佐夫博弈：有两堆石子，每次可以在一堆里取任意（非空）颗（相当于是车的走法），或者在两堆里取相同（非空）颗（相当于是象的走法），取到最后一颗石子的人获胜，问先后手谁有必胜策略。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type,n,m,nn;</span><br><span class="line"><span class="keyword">int</span> g[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">double</span> x=(<span class="number">1.0</span>+<span class="built_in">sqrt</span>(<span class="number">5.0</span>))/<span class="number">2.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;type,&amp;n,&amp;m);</span><br><span class="line">        <span class="keyword">if</span>(n&gt;m) &#123;</span><br><span class="line">            swap(n,m);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(type==<span class="number">1</span>) &#123;<span class="comment">//1.国王：米字1步，无平局</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c\n"</span>,n%<span class="number">2</span>==<span class="number">0</span>||m%<span class="number">2</span>==<span class="number">0</span>?<span class="string">'B'</span>:<span class="string">'G'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(type==<span class="number">2</span>) &#123;<span class="comment">//2.车：十字无限，无平局</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c\n"</span>,n==m?<span class="string">'G'</span>:<span class="string">'B'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(type==<span class="number">3</span>) &#123;<span class="comment">//3.骑士：日字1步，有平局</span></span><br><span class="line">            <span class="keyword">if</span>((n+m)%<span class="number">3</span>==<span class="number">2</span>&amp;&amp;n+<span class="number">1</span>==m) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"B\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(n==m&amp;&amp;n%<span class="number">3</span>==<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"G\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"D\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;<span class="comment">//4.皇后：米字无限，无平局（威佐夫博弈）</span></span><br><span class="line">            --n;</span><br><span class="line">            --m;</span><br><span class="line">            nn=<span class="built_in">floor</span>((m-n)*x);<span class="comment">//计算第m-n个奇异局势</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c\n"</span>,n==nn?<span class="string">'G'</span>:<span class="string">'B'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1010-Rower-Bo"><a href="#1010-Rower-Bo" class="headerlink" title="1010. Rower Bo"></a>1010. Rower Bo</h1><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5761" title="HDU-5761 Rower Bo" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h2><p>在平面上有一条\(x\)轴流向的河，水流速度为\(v_2\)，一个人乘小船从\((0,a)\)处驶向\(0,0\)处，行驶速度为\(v_1\)，行驶过程中船头始终指向\((0,0)\)处，求需要多少时间？</p>
+<h2 id="思路-数学-1"><a href="#思路-数学-1" class="headerlink" title="思路 - 数学"></a>思路 - 数学</h2><p>比赛时已经列出来题解所给的方程，但是没有直接从起点积分到终点，只是对中间某一点进行分析，而且设参不够巧妙，导致参数过多，无法解出来。<br>设\(t\)时刻所在位置与原点的连线与\(x\)轴夹角为\(θ\)，此时船距离原点\(r\)，则可得方程：<br>\(\frac {dx} {dt}=v_2 - v_1 * cosθ\)<br>\(\frac {dr} {dt}=v_2 * cosθ - v_1\)<br>对上述两式从起点积到终点可得：<br>\(0-a=v_2 * \int_0^T cosθ dt-v_1*T\)<br>\(0-0=v_2*T - v_1 * \int_0^T cosθ dt\)<br>联立方程姐得：<br>\(T=\frac {v_1 * a} {v_1^2-v_2^2}\)。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a,v1,v2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">3</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;v1,&amp;v2)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0.000000\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(v1&lt;=v2) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Infinity\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.6lf\n"</span>,<span class="number">1.0</span>*a*v1/(v1*v1-v2*v2));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="1011-Teacher-Bo"><a href="#1011-Teacher-Bo" class="headerlink" title="1011. Teacher Bo"></a>1011. Teacher Bo</h1><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5762" title="HDU-5762 Teacher Bo" target="_blank" rel="external">题目链接</a></p>
+<h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h2><p>在平面上有\(n\)个点，每个点的坐标范围为：[0,m]，判断是否存在两对点，他们的曼哈顿距离和相等。</p>
+<h2 id="思路-枚举-1"><a href="#思路-枚举-1" class="headerlink" title="思路 - 枚举"></a>思路 - 枚举</h2><p>想了一会儿还是只能想到枚举，但是刚开始只注意到\(n\)的范围，后来看到坐标的范围也给出了，就想到必有深意，想了一下就能发现，曼哈顿距离最多只有\(2*m+1\)个，所以枚举是不会超时的，而且还可以通过计算剪掉一大部分。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,mxn;</span><br><span class="line"><span class="keyword">int</span> x[<span class="number">100005</span>],y[<span class="number">100005</span>],dis;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">250005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getPos</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&lt;<span class="number">0</span>?-a:a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;n;++j) &#123;</span><br><span class="line">            dis=getPos(x[i]-x[j])+getPos(y[i]-y[j]);</span><br><span class="line">            <span class="keyword">if</span>(vis[dis]) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">                <span class="keyword">return</span> ;</span><br><span class="line">            &#125;</span><br><span class="line">            vis[dis]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,x+i,y+i);</span><br><span class="line">        &#125;</span><br><span class="line">        mxn=<span class="built_in">sqrt</span>(<span class="number">2.0</span>*m)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n&gt;mxn) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            solve();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/26/2016-Multi-University-Training-Contest 3/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
