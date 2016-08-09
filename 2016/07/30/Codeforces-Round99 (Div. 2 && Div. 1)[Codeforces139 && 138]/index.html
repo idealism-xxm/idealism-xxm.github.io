@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Codeforces Round-#99 (Div. 2 &amp;&amp; Div. 1) [Codeforces139 &amp;&amp; 138] | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接Div. 1Div. 2官方题解
+139 - A - Petr and Book题目大意有一个人看一本\(n\)页的书，星期一~星期天每天看一定量的页数，求星期几会看完最后一页？
+思路 - 模拟先求出每一周能看的页数\(sum\)，然后\(n%=sum\)，若\(n==0\)，则\(n=sum\)，然后看其星期几能看完即可。
+代码123456789101112131415161718192">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round-#99 (Div. 2 && Div. 1) [Codeforces139 && 138] | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/07/30/Codeforces-Round99 (Div. 2 && Div. 1)[Codeforces139 && 138]/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接Div. 1Div. 2官方题解
+139 - A - Petr and Book题目大意有一个人看一本\(n\)页的书，星期一~星期天每天看一定量的页数，求星期几会看完最后一页？
+思路 - 模拟先求出每一周能看的页数\(sum\)，然后\(n%=sum\)，若\(n==0\)，则\(n=sum\)，然后看其星期几能看完即可。
+代码123456789101112131415161718192">
+<meta property="og:updated_time" content="2016-07-31T09:01:21.906Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces Round-#99 (Div. 2 && Div. 1) [Codeforces139 && 138] | 留住了丶时间">
+<meta name="twitter:description" content="题目链接Div. 1Div. 2官方题解
+139 - A - Petr and Book题目大意有一个人看一本\(n\)页的书，星期一~星期天每天看一定量的页数，求星期几会看完最后一页？
+思路 - 模拟先求出每一周能看的页数\(sum\)，然后\(n%=sum\)，若\(n==0\)，则\(n=sum\)，然后看其星期几能看完即可。
+代码123456789101112131415161718192">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Codeforces Round-#99 (Div. 2 &amp;&amp; Div. 1) [Codeforces139 &amp;&amp; 138]</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-30" class="post-meta__date date">2016-07-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/Contests/">Contests</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/Codeforces/">Codeforces</a>, <a class="tags-link" href="/tags/扫描线/">扫描线</a>, <a class="tags-link" href="/tags/数学/">数学</a>, <a class="tags-link" href="/tags/枚举/">枚举</a>, <a class="tags-link" href="/tags/模拟/">模拟</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>题目链接<br><a href="http://codeforces.com/contest/139" title="Codeforces Beta Round #99 (Div. 1)" target="_blank" rel="external">Div. 1</a><br><a href="http://codeforces.com/contest/138" title="Codeforces Beta Round #99 (Div. 2)" target="_blank" rel="external">Div. 2</a><br><a href="http://codeforces.com/blog/entry/3462" title="Codeforces Beta Round #99: editorial" target="_blank" rel="external">官方题解</a></p>
+<h1 id="139-A-Petr-and-Book"><a href="#139-A-Petr-and-Book" class="headerlink" title="139 - A - Petr and Book"></a>139 - A - Petr and Book</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有一个人看一本\(n\)页的书，星期一~星期天每天看一定量的页数，求星期几会看完最后一页？</p>
+<h2 id="思路-模拟"><a href="#思路-模拟" class="headerlink" title="思路 - 模拟"></a>思路 - 模拟</h2><p>先求出每一周能看的页数\(sum\)，然后\(n%=sum\)，若\(n==0\)，则\(n=sum\)，然后看其星期几能看完即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,week[<span class="number">9</span>],sum,ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">7</span>;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,week+i);</span><br><span class="line">            sum+=week[i];</span><br><span class="line">        &#125;</span><br><span class="line">        n%=sum;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) &#123;</span><br><span class="line">            n=sum;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(n&gt;week[ans]) &#123;</span><br><span class="line">            n-=week[ans++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="139-B-Wallpaper"><a href="#139-B-Wallpaper" class="headerlink" title="139 - B - Wallpaper"></a>139 - B - Wallpaper</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h2><p>有一个人有\(n\)间房，第\(i\)间房的长宽高分别为\(l,w,h\)，可以用\(m\)种壁纸贴在墙上，第\(j\)种壁纸一卷长度为\(ll\)，宽度为\(ww\)，价格为\(c\)，壁纸可以任意切割，但是只能竖直贴在墙上，且一卷壁纸只能用于一个房间，求给所有房间贴上壁纸后所需的最小花费？</p>
+<h2 id="思路-枚举"><a href="#思路-枚举" class="headerlink" title="思路 - 枚举"></a>思路 - 枚举</h2><p>对于每一种壁纸，看每个房间用这种壁纸时的花费，不断更新最小花费即可，最后求和。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node &#123;</span><br><span class="line">    <span class="keyword">int</span> per,h;</span><br><span class="line">&#125;room[<span class="number">505</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,money[<span class="number">505</span>],l,w,c,len;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;w,&amp;room[i].h);</span><br><span class="line">            room[i].per=<span class="number">2</span>*(l+w);</span><br><span class="line">            money[i]=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;w,&amp;c);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;++j) &#123;</span><br><span class="line">                <span class="keyword">if</span>(l&gt;=room[j].h) &#123;</span><br><span class="line">                    len=l/room[j].h*w;</span><br><span class="line">                    money[j]=min(money[j],c*(room[j].per/len+(room[j].per%len==<span class="number">0</span>?<span class="number">0</span>:<span class="number">1</span>)));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=money[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i) &#123;</span><br><span class="line">            ans+=money[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="138-A-Literature-Lesson"><a href="#138-A-Literature-Lesson" class="headerlink" title="138 - A - Literature Lesson"></a>138 - A - Literature Lesson</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定\(n\)段四行诗，只看倒数第\(k\)个元音字符起始的后缀串，若某两句的这个后缀串相同，则这两句押韵，每段诗的四句按照押韵形式分为：\(aabb,abab,abba\)和\(aaaa\)，且\(aaaa\)可以看成任何形式的押韵，若所有\(n\)段押韵形式相同，则输出押韵形式，否则输出\(NO\)。</p>
+<h2 id="思路-枚举-1"><a href="#思路-枚举-1" class="headerlink" title="思路 - 枚举"></a>思路 - 枚举</h2><p>从第一段枚举押韵的句子，判断当前段的押韵形式，然后更新答案即可。</p>
+<p>感觉写得有点麻烦，看了别人的代码，感觉好简单。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> res[<span class="number">5</span>][<span class="number">7</span>]=&#123;<span class="string">"NO"</span>,<span class="string">"aaaa"</span>,<span class="string">"aabb"</span>,<span class="string">"abab"</span>,<span class="string">"abba"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,k,cur,ans;</span><br><span class="line"><span class="keyword">int</span> sta[<span class="number">5</span>],len[<span class="number">5</span>],indx[<span class="number">5</span>][<span class="number">10005</span>],cnt[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">5</span>][<span class="number">10005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isEqual</span><span class="params">(<span class="keyword">char</span> s1[],<span class="keyword">int</span> sta1,<span class="keyword">char</span> s2[],<span class="keyword">int</span> sta2,<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(--num&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s1[sta1+num]!=s2[sta2+num]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sta[i]!=<span class="number">-1</span>&amp;&amp;sta[j]!=<span class="number">-1</span>&amp;&amp;len[i]-sta[i]==len[j]-sta[j]&amp;&amp;isEqual(s[i],sta[i],s[j],sta[j],len[i]-sta[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k)) &#123;</span><br><span class="line">        ans=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j,l;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;<span class="number">4</span>;++l) &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s[l]);</span><br><span class="line">                cnt[l]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(j=<span class="number">0</span>;s[l][j]!=<span class="string">'\0'</span>;++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(s[l][j]==<span class="string">'a'</span>||s[l][j]==<span class="string">'e'</span>||s[l][j]==<span class="string">'i'</span>||s[l][j]==<span class="string">'o'</span>||s[l][j]==<span class="string">'u'</span>) &#123;</span><br><span class="line">                        indx[l][cnt[l]++]=j;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                sta[l]=(cnt[l]&lt;k?<span class="number">-1</span>:indx[l][cnt[l]-k]);</span><br><span class="line">                len[l]=j;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(ans!=<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(judge(<span class="number">0</span>,<span class="number">1</span>)) &#123;<span class="comment">//第一行和第二行押韵</span></span><br><span class="line">                    <span class="keyword">if</span>(judge(<span class="number">2</span>,<span class="number">3</span>)) &#123;<span class="comment">//第三行和第四行押韵</span></span><br><span class="line">                        <span class="keyword">if</span>(judge(<span class="number">0</span>,<span class="number">2</span>)) &#123;<span class="comment">//第一行和第三行押韵</span></span><br><span class="line">                            cur=<span class="number">1</span>;<span class="comment">//aaaa</span></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;<span class="comment">//第一行和第三行不押韵</span></span><br><span class="line">                            cur=<span class="number">2</span>;<span class="comment">//aabb</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;<span class="comment">//第三行和第四行不押韵，就没有押韵</span></span><br><span class="line">                        cur=<span class="number">0</span>;<span class="comment">//NO</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;<span class="comment">//第一行和第二行不押韵</span></span><br><span class="line">                    <span class="keyword">if</span>(judge(<span class="number">0</span>,<span class="number">2</span>)&amp;&amp;judge(<span class="number">1</span>,<span class="number">3</span>)) &#123;<span class="comment">//第一行和第三行押韵且第二行和第四行押韵</span></span><br><span class="line">                        cur=<span class="number">3</span>;<span class="comment">//abab</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(judge(<span class="number">0</span>,<span class="number">3</span>)&amp;&amp;judge(<span class="number">1</span>,<span class="number">2</span>)) &#123;<span class="comment">//第一行和第四行押韵且第二行和第三行押韵</span></span><br><span class="line">                        cur=<span class="number">4</span>;<span class="comment">//abba</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        cur=<span class="number">0</span>;<span class="comment">//NO</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(ans==<span class="number">1</span>) &#123;</span><br><span class="line">                    ans=cur;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(ans!=cur&amp;&amp;cur!=<span class="number">1</span>) &#123;<span class="comment">//这里刚开始没有判断cur!=1的情况，结果WA在37直到比赛结束，结束后又看不全数据，想了半天才想出来这个数据。。。</span></span><br><span class="line">                    ans=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,res[ans]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="138-B-Digits-Permutations"><a href="#138-B-Digits-Permutations" class="headerlink" title="138 - B - Digits Permutations"></a>138 - B - Digits Permutations</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个\(10^5\)位以内的数，求这个数的两个排列使得这两个数的和末尾\(0\)最多？</p>
+<h2 id="思路-模拟-1"><a href="#思路-模拟-1" class="headerlink" title="思路 - 模拟"></a>思路 - 模拟</h2><p>首先就想到一个错误的贪心，将所有的\(0\)放在末尾，但是\(0+9=9\)，所以要将其一部分按照平常的数字对待，首先枚举末尾起的非\(0\)数字和为\(10\)的组合，找到能使末尾\(0\)最多的组合，然后不停将从末尾往前加即可。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> len,cnt[<span class="number">3</span>][<span class="number">11</span>],rem[<span class="number">11</span>],ed,mx,cur;</span><br><span class="line"><span class="keyword">char</span> ori[<span class="number">100005</span>],s[<span class="number">3</span>][<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">calMaxZero</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">9</span>;++i) &#123;</span><br><span class="line">        sum+=min(cnt[<span class="number">0</span>][i],cnt[<span class="number">1</span>][<span class="number">9</span>-i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,ori)) &#123;</span><br><span class="line">        <span class="built_in">memset</span>(cnt,<span class="number">0</span>,<span class="keyword">sizeof</span>(cnt));</span><br><span class="line">        len=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(ori[len]!=<span class="string">'\0'</span>) &#123;</span><br><span class="line">            ++cnt[<span class="number">0</span>][ori[len++]-<span class="string">'0'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">9</span>;++i) &#123;</span><br><span class="line">            cnt[<span class="number">1</span>][i]=cnt[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        mx=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;++i) &#123;<span class="comment">//枚举末尾的数字相加为10</span></span><br><span class="line">            <span class="keyword">if</span>(cnt[<span class="number">0</span>][i]&gt;<span class="number">0</span>&amp;&amp;cnt[<span class="number">1</span>][<span class="number">10</span>-i]&gt;<span class="number">0</span>) &#123;<span class="comment">//若相加为10的两个数都有</span></span><br><span class="line">                --cnt[<span class="number">0</span>][i];</span><br><span class="line">                --cnt[<span class="number">1</span>][<span class="number">10</span>-i];<span class="comment">//假设将这一对放在末尾</span></span><br><span class="line">                cur=calMaxZero();<span class="comment">//统计其它数字还能形成的0的个数</span></span><br><span class="line">                <span class="keyword">if</span>(cur&gt;mx) &#123;</span><br><span class="line">                    mx=cur;</span><br><span class="line">                    ed=i;</span><br><span class="line">                &#125;</span><br><span class="line">                ++cnt[<span class="number">0</span>][i];</span><br><span class="line">                ++cnt[<span class="number">1</span>][<span class="number">10</span>-i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(mx==<span class="number">-1</span>) &#123;<span class="comment">//无论怎么选，都不存在末尾相加为10的数</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">9</span>;++i) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=cnt[<span class="number">0</span>][i];j&gt;<span class="number">0</span>;--j) &#123;</span><br><span class="line">                    ori[--len]=i+<span class="string">'0'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n%s\n"</span>,ori,ori);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            --cnt[<span class="number">0</span>][ed];</span><br><span class="line">            --cnt[<span class="number">1</span>][<span class="number">10</span>-ed];<span class="comment">//确定将这一对放在末尾0之前</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=cnt[<span class="number">0</span>][<span class="number">0</span>]-cnt[<span class="number">0</span>][<span class="number">9</span>];i&gt;<span class="number">0</span>;--i) &#123;<span class="comment">//将多余的0补在末尾</span></span><br><span class="line">                --len;</span><br><span class="line">                s[<span class="number">0</span>][len]=s[<span class="number">1</span>][len]=<span class="string">'0'</span>;</span><br><span class="line">                --cnt[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">                --cnt[<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            s[<span class="number">0</span>][--len]=ed+<span class="string">'0'</span>;</span><br><span class="line">            s[<span class="number">1</span>][len]=<span class="number">10</span>-ed+<span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">9</span>;++i) &#123;<span class="comment">//将和为9的一对数字放在同一位置</span></span><br><span class="line">                <span class="keyword">while</span>(cnt[<span class="number">0</span>][i]&gt;<span class="number">0</span>&amp;&amp;cnt[<span class="number">1</span>][<span class="number">9</span>-i]&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                    --cnt[<span class="number">0</span>][i];</span><br><span class="line">                    --cnt[<span class="number">1</span>][<span class="number">9</span>-i];</span><br><span class="line">                    s[<span class="number">0</span>][--len]=i+<span class="string">'0'</span>;</span><br><span class="line">                    s[<span class="number">1</span>][len]=<span class="number">9</span>-i+<span class="string">'0'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(len&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,n=len;i&lt;=<span class="number">9</span>;++i) &#123;<span class="comment">//将剩余的数字分别补在两个字符串的前面</span></span><br><span class="line">                    <span class="keyword">while</span>(cnt[<span class="number">0</span>][i]&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                        --cnt[<span class="number">0</span>][i];</span><br><span class="line">                        s[<span class="number">0</span>][--len]=i+<span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">while</span>(cnt[<span class="number">1</span>][i]&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                        --cnt[<span class="number">1</span>][i];</span><br><span class="line">                        s[<span class="number">1</span>][--n]=i+<span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n%s\n"</span>,s[<span class="number">0</span>],s[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="138-C-Mushroom-Gnomes-2"><a href="#138-C-Mushroom-Gnomes-2" class="headerlink" title="138 - C - Mushroom Gnomes - 2"></a>138 - C - Mushroom Gnomes - 2</h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h2><p>有\(n\)棵树，第\(i\)棵树在数轴的\(x_i\)处，高度为\(h_i\)，向左倒的概率为\(l_i\)，向右倒的概率为\(r_i\)，不倒的概率为\(1-l_i-r_i\)，有\(m\)个蘑菇，第\(j\)个蘑菇在数轴的\(b_j\)处，有\(z_j\)点魔法力，被压住的蘑菇会死亡，求最后剩余的蘑菇的魔法力之和的期望？</p>
+<h2 id="思路-扫描线"><a href="#思路-扫描线" class="headerlink" title="思路 - 扫描线"></a>思路 - 扫描线</h2><p>看到期望题就能想到看每个蘑菇对答案的贡献，但是刚开始想的是对于每个蘑菇枚举树，这样肯定超时，看了题解后可以发现扫描线算法（其实树状数组的区间修改单点查询一直就用的这样方法，只是不知道名字）能轻松解决这个问题。<br>将每个线段分成起点和终点，起点加上不被压住的概率，\(终点+1\)减去不被压住的概率，然后“查询”蘑菇即可。</p>
+<p>由于存在精度问题，所以需要取对数。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Tree &#123;</span><br><span class="line">    <span class="keyword">int</span> x,type,prob;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setVal</span><span class="params">(<span class="keyword">int</span> xx,<span class="keyword">int</span> ttype,<span class="keyword">int</span> pprob)</span> </span>&#123;</span><br><span class="line">        x=xx;</span><br><span class="line">        type=ttype;</span><br><span class="line">        prob=pprob;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Tree&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x&lt;a.x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;tree[<span class="number">400005</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Mushroom &#123;</span><br><span class="line">    <span class="keyword">int</span> x,power;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Mushroom&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x&lt;a.x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;mushroom[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,x,h,l,r,cnt,num;</span><br><span class="line"><span class="keyword">double</span> lg_prob,ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)) &#123;</span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;x,&amp;h,&amp;l,&amp;r);</span><br><span class="line">            <span class="keyword">if</span>(l&gt;<span class="number">0</span>) &#123;<span class="comment">//不会向左倒的概率，即区间[x-h,x)不会被压住的概率</span></span><br><span class="line">                tree[cnt++].setVal(x-h,<span class="number">1</span>,<span class="number">100</span>-l);<span class="comment">//1表示区间开始</span></span><br><span class="line">                tree[cnt++].setVal(x,<span class="number">-1</span>,<span class="number">100</span>-l);<span class="comment">//-1表示区间结束</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(r&gt;<span class="number">0</span>) &#123;<span class="comment">//不会向右倒的概率，即区间(x,x+h]不会被压住的概率</span></span><br><span class="line">                tree[cnt++].setVal(x+<span class="number">1</span>,<span class="number">1</span>,<span class="number">100</span>-r);</span><br><span class="line">                tree[cnt++].setVal(x+h+<span class="number">1</span>,<span class="number">-1</span>,<span class="number">100</span>-r);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(tree,tree+cnt);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;mushroom[i].x,&amp;mushroom[i].power);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(mushroom,mushroom+m);</span><br><span class="line">        num=<span class="number">0</span>;<span class="comment">//num表示当前这个点被多少个区间覆盖</span></span><br><span class="line">        lg_prob=ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;m;++i) &#123;</span><br><span class="line">            <span class="keyword">while</span>(j&lt;cnt&amp;&amp;tree[j].x&lt;=mushroom[i].x) &#123;</span><br><span class="line">                <span class="keyword">if</span>(tree[j].type==<span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(tree[j].prob==<span class="number">0</span>) &#123;<span class="comment">//如果这个点不被覆盖的概率为0</span></span><br><span class="line">                        ++num;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        lg_prob+=<span class="built_in">log</span>(tree[j].prob/<span class="number">100.0</span>);<span class="comment">//取成log，防止精度问题</span></span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span>(tree[j].prob==<span class="number">0</span>) &#123;<span class="comment">//如果这个点不被覆盖的概率为0</span></span><br><span class="line">                        --num;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        lg_prob-=<span class="built_in">log</span>(tree[j].prob/<span class="number">100.0</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                ++j;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(num==<span class="number">0</span>) &#123;<span class="comment">//如果这个点可以不被覆盖</span></span><br><span class="line">                ans+=mushroom[i].power*<span class="built_in">exp</span>(lg_prob);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.7lf\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="138-D"><a href="#138-D" class="headerlink" title="138 - D -"></a>138 - D -</h1><h2 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路 -"></a>思路 -</h2><h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">﻿</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/30/Codeforces-Round99 (Div. 2 && Div. 1)[Codeforces139 && 138]/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

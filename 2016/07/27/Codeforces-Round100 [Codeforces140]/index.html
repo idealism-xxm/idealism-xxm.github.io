@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Codeforces Round-#100 [Codeforces140] | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接官方题解
+140 - A - New Year Table题目大意问在一个半径\(R\)的桌子上是否能放下半径\(r\)的盘子，要求每个盘子都要和桌子边缘相切，不允许盘子重叠。
+思路 - 数学画一下图，可以发现盘子的圆心连起来是一个正多边形，相邻两个盘子的圆心与桌子的圆心连线的夹角\(θ\)可以算出来，然后最大能放的盘子数就是\(floor( \frac {2\pi} {θ} ) \)。*">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round-#100 [Codeforces140] | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/07/27/Codeforces-Round100 [Codeforces140]/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接官方题解
+140 - A - New Year Table题目大意问在一个半径\(R\)的桌子上是否能放下半径\(r\)的盘子，要求每个盘子都要和桌子边缘相切，不允许盘子重叠。
+思路 - 数学画一下图，可以发现盘子的圆心连起来是一个正多边形，相邻两个盘子的圆心与桌子的圆心连线的夹角\(θ\)可以算出来，然后最大能放的盘子数就是\(floor( \frac {2\pi} {θ} ) \)。*">
+<meta property="og:updated_time" content="2016-07-28T03:54:46.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces Round-#100 [Codeforces140] | 留住了丶时间">
+<meta name="twitter:description" content="题目链接官方题解
+140 - A - New Year Table题目大意问在一个半径\(R\)的桌子上是否能放下半径\(r\)的盘子，要求每个盘子都要和桌子边缘相切，不允许盘子重叠。
+思路 - 数学画一下图，可以发现盘子的圆心连起来是一个正多边形，相邻两个盘子的圆心与桌子的圆心连线的夹角\(θ\)可以算出来，然后最大能放的盘子数就是\(floor( \frac {2\pi} {θ} ) \)。*">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Codeforces Round-#100 [Codeforces140]</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-27" class="post-meta__date date">2016-07-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/Contests/">Contests</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/Codeforces/">Codeforces</a>, <a class="tags-link" href="/tags/数学/">数学</a>, <a class="tags-link" href="/tags/模拟/">模拟</a>, <a class="tags-link" href="/tags/贪心/">贪心</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><a href="http://codeforces.com/contest/140" title="Codeforces Round #100" target="_blank" rel="external">题目链接</a><br><a href="http://codeforces.com/blog/entry/3542" title="Codeforces Round #100: problem analysis" target="_blank" rel="external">官方题解</a></p>
+<h1 id="140-A-New-Year-Table"><a href="#140-A-New-Year-Table" class="headerlink" title="140 - A - New Year Table"></a>140 - A - New Year Table</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>问在一个半径\(R\)的桌子上是否能放下半径\(r\)的盘子，要求每个盘子都要和桌子边缘相切，不允许盘子重叠。</p>
+<h2 id="思路-数学"><a href="#思路-数学" class="headerlink" title="思路 - 数学"></a>思路 - 数学</h2><p>画一下图，可以发现盘子的圆心连起来是一个正多边形，相邻两个盘子的圆心与桌子的圆心连线的夹角\(θ\)可以算出来，然后最大能放的盘子数就是\(floor( \frac {2<em>\pi} {θ} ) \)。<br>**注意需要特判\(n==1||n==2\)以及\(n&gt;=3&amp;&amp;2\</em>r&gt;R\)的情况。**</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,R,r,mx;</span><br><span class="line"><span class="keyword">double</span> ang;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">3</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;R,&amp;r)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>||n==<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,n*r&lt;=R?<span class="string">"YES"</span>:<span class="string">"NO"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">2</span>*r&gt;=R)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ang=<span class="number">2</span>*<span class="built_in">asin</span>(<span class="number">1.0</span>*r/(R-r));</span><br><span class="line">        mx=<span class="number">2</span>*PI/ang+<span class="number">0.0000001</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,n&lt;=mx?<span class="string">"YES"</span>:<span class="string">"NO"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="140-B-New-Year-Cards"><a href="#140-B-New-Year-Cards" class="headerlink" title="140 - B - New Year Cards"></a>140 - B - New Year Cards</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h2><p>\(Alexander\)有\(n\)个朋友，他和每个朋友之间都要互送一张贺卡，给每个人按送贺卡时间分别标上\(1~n\)，他们送的贺卡的标号和自己的标号一样。\(Alexander\)只会送出自己之前收到的贺卡，每张贺卡可以多次送出，且他送贺卡遵循两个条件：<br>①不给第\(i\)个人送\(i\)号贺卡<br>②每个时刻，在可送的贺卡列表中，选择自己最喜欢的贺卡送出<br>同时他还想尽量送出朋友最喜欢的卡，问对于第\(i\)个朋友，他应该在第几个时刻（即手上拥有几张卡时）送出卡？</p>
+<h2 id="思路-模拟"><a href="#思路-模拟" class="headerlink" title="思路 - 模拟"></a>思路 - 模拟</h2><p>这个题目好绕啊，直接没看懂。。。<br>看了好多题目翻译，再加上看了数据的结果，才明白是什么意思，突然觉得英语和理解能力都好渣。。。<br>对于\(Alexander\)和他的朋友，我们只需要记住每张卡在他们那的排序，然后枚举时刻，记住当先最喜欢和第二喜欢的卡，如果最喜欢的卡更新，则对全部人送出的卡更新，如果只更新第二喜欢的卡，则只会更新送出第一喜欢的卡的人。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,fri_index[<span class="number">305</span>][<span class="number">305</span>],alex_index[<span class="number">305</span>],a,ans[<span class="number">305</span>],card,backup;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j) &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">                fri_index[i][a]=j;</span><br><span class="line">            &#125;</span><br><span class="line">            fri_index[i][n+<span class="number">1</span>]=n+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">            alex_index[a]=i;</span><br><span class="line">            ans[i]=n+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        alex_index[n+<span class="number">1</span>]=n+<span class="number">1</span>;</span><br><span class="line">        card=backup=n+<span class="number">1</span>;<span class="comment">//card表示当前时刻，Alex最喜欢的卡；backup表示当前时刻，Alex第二喜欢的卡</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(alex_index[i]&lt;alex_index[card]) &#123;<span class="comment">//如果Alex更喜欢新送来的卡</span></span><br><span class="line">                backup=card;</span><br><span class="line">                card=i;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j) &#123;<span class="comment">//更新每个朋友会收到的卡</span></span><br><span class="line">                    <span class="keyword">if</span>(card!=j&amp;&amp;fri_index[j][card]&lt;fri_index[j][ans[j]]) &#123;<span class="comment">//如果当前卡不是这个朋友送出的，并且朋友更喜欢</span></span><br><span class="line">                        ans[j]=card;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(alex_index[i]&lt;alex_index[backup]) &#123;<span class="comment">//如果只更新第二喜欢的卡，则这张卡只能送给送出card卡的人</span></span><br><span class="line">                backup=i;</span><br><span class="line">                <span class="keyword">if</span>(fri_index[card][backup]&lt;fri_index[card][ans[card]]) &#123;</span><br><span class="line">                    ans[card]=backup;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,ans[i],i==n?<span class="string">'\n'</span>:<span class="string">' '</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="140-C-New-Year-Snowmen"><a href="#140-C-New-Year-Snowmen" class="headerlink" title="140 - C - New Year Snowmen"></a>140 - C - New Year Snowmen</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定\(n\)个数，求最多有多少个三元组\((a,b,c\)，满足\(a!=b&amp;&amp;a!=c&amp;&amp;b!=c\)？</p>
+<h2 id="思路-贪心"><a href="#思路-贪心" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h2><p>刚开始想枚举当前数中最小的，然后剩余两个用线段树查找最多的，但是写起来比较麻烦，写了一半就有了贪心的解法。<br>统计每个数的个数，然后放入优先队列，每次取个数最多的三个数形成一个三元组，个数还有剩余是在放回优先队列，直至队列中元素个数小于\(3\)。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node &#123;</span><br><span class="line">    <span class="keyword">int</span> r,cnt;</span><br><span class="line"></span><br><span class="line">    Node(<span class="keyword">int</span> rr=<span class="number">0</span>,<span class="keyword">int</span> ccnt=<span class="number">0</span>):r(rr),cnt(ccnt) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node&amp; a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cnt&lt;a.cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a,b,c;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,cnt,tot,indx,x;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">34005</span>][<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> r[<span class="number">100005</span>];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; mp;</span><br><span class="line">priority_queue&lt;Node&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        cnt=tot=<span class="number">0</span>;</span><br><span class="line">        mp.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">            ++mp[x];</span><br><span class="line">            <span class="keyword">if</span>(mp[x]==<span class="number">1</span>) &#123;</span><br><span class="line">                r[tot++]=x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tot;++i) &#123;</span><br><span class="line">            q.push(Node(r[i],mp[r[i]]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(q.size()&gt;=<span class="number">3</span>) &#123;</span><br><span class="line">            a=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            b=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            c=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line"></span><br><span class="line">            ans[cnt][<span class="number">0</span>]=a.r;</span><br><span class="line">            --a.cnt;</span><br><span class="line">            ans[cnt][<span class="number">1</span>]=b.r;</span><br><span class="line">            --b.cnt;</span><br><span class="line">            ans[cnt][<span class="number">2</span>]=c.r;</span><br><span class="line">            --c.cnt;</span><br><span class="line"></span><br><span class="line">            sort(ans[cnt],ans[cnt]+<span class="number">3</span>);</span><br><span class="line">            ++cnt;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(a.cnt!=<span class="number">0</span>) &#123;</span><br><span class="line">                q.push(a);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(b.cnt!=<span class="number">0</span>) &#123;</span><br><span class="line">                q.push(b);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(c.cnt!=<span class="number">0</span>) &#123;</span><br><span class="line">                q.push(c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,cnt);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cnt;++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,ans[i][<span class="number">2</span>],ans[i][<span class="number">1</span>],ans[i][<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="140-D-New-Year-Contest"><a href="#140-D-New-Year-Contest" class="headerlink" title="140 - D - New Year Contest"></a>140 - D - New Year Contest</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h2><p>有一个人从\(18:00\)开始打一场比赛，比赛结束时间是第二天\(06:00\)。比赛共有\(n\)道题，开始\(10\ min\)，这个人统计出了写出第\(i\)道题的正解用时为\(a[i]\)，比赛罚时计算方法为与\(00:00\)相差的分钟数，提交题的时间可以任意选择，求在解决最多题的情况下，罚时最少是多少？</p>
+<h2 id="思路-贪心-1"><a href="#思路-贪心-1" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h2><p>将写题时间按升序排序，然后选择前\(cnt\)道总用时不超过\(720-10\  min\)的题，则最多解出\(cnt\)道题，然后统计写完每道题的时间，总用时在\(360-10\ min\)内的无罚时，其它的写完就交即可。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,a[<span class="number">105</span>],cnt,penalty,tot;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,a+i);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a,a+n);</span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">        penalty=<span class="number">0</span>;</span><br><span class="line">        tot=<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            tot+=a[i];</span><br><span class="line">            <span class="keyword">if</span>(tot&lt;=<span class="number">720</span>) &#123;</span><br><span class="line">                ++cnt;</span><br><span class="line">                <span class="keyword">if</span>(tot&gt;<span class="number">360</span>) &#123;</span><br><span class="line">                    penalty+=tot<span class="number">-360</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,cnt,penalty);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="670-B-Connecting-Universities"><a href="#670-B-Connecting-Universities" class="headerlink" title="670 - B - Connecting Universities"></a>670 - B - Connecting Universities</h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h2><p>有一棵\(n\)个结点的树，选定树上的\(2*k\)结点，分成\(k\)对，使得这\(k\)对的最短路径和最大，求这个最大值？</p>
+<h2 id="思路-树形DP"><a href="#思路-树形DP" class="headerlink" title="思路 - 树形DP"></a>思路 - 树形DP</h2><p>假设\(1\)为原树的树根，\(cnt[u]\)表示以\(u\)为根的子树中选定结点的个数，每条边\( (u,v) \)对答案的贡献就是\(min(cnt[v],2*k-cnt[v]\)。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,k,s,e;</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">200005</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[<span class="number">200005</span>];</span><br><span class="line"><span class="keyword">bool</span> hasUniversity[<span class="number">200005</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    cnt[u]=hasUniversity[u]?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=g[u].size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;--i) &#123;</span><br><span class="line">        v=g[u][i];</span><br><span class="line">        <span class="keyword">if</span>(cnt[v]==<span class="number">-1</span>) &#123;</span><br><span class="line">            dfs(v);</span><br><span class="line">            ans+=min(cnt[v],k-cnt[v]);</span><br><span class="line">            cnt[u]+=cnt[v];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">            cnt[i]=<span class="number">-1</span>;</span><br><span class="line">            g[i].clear();</span><br><span class="line">            hasUniversity[i]=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;s,&amp;e);</span><br><span class="line">            hasUniversity[s]=hasUniversity[e]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;s,&amp;e);</span><br><span class="line">            g[s].push_back(e);</span><br><span class="line">            g[e].push_back(s);</span><br><span class="line">        &#125;</span><br><span class="line">        k&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        dfs(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="687-C"><a href="#687-C" class="headerlink" title="687 - C -"></a>687 - C -</h1><h2 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路 -"></a>思路 -</h2><h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">﻿</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/07/27/Codeforces-Round100 [Codeforces140]/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
