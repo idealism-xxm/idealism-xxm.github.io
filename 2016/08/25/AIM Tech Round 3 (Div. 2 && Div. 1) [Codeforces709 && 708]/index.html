@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      AIM Tech Round 3 (Div. 2 &amp;&amp; Div. 1) [Codeforces709 &amp;&amp; 708] | 留住了丶时间 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="idealism-xxm">
+    
+    
+
+    <meta name="description" content="题目链接Div. 1Div. 2官方题解
+709 - A - Juicer题目大意给定\(n\)个桔子，第\(i\)个桔子的大小为\(a[i]\)，按照给定顺序一次放入榨汁机榨果汁，能榨出\(a[i]\)多的果汁，只能将大小小于等于\(b\)的桔子放入，其余扔掉，且每次榨出的果汁和严格大于\(d\)时，就清空一次存储果汁的容易，求最终要清空多少次？
+思路 - 模拟按照题意模拟一遍即可，没有什么坑点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIM Tech Round 3 (Div. 2 && Div. 1) [Codeforces709 && 708] | 留住了丶时间">
+<meta property="og:url" content="http://idealism-xxm.github.io/2016/08/25/AIM Tech Round 3 (Div. 2 && Div. 1) [Codeforces709 && 708]/index.html">
+<meta property="og:site_name" content="留住了丶时间">
+<meta property="og:description" content="题目链接Div. 1Div. 2官方题解
+709 - A - Juicer题目大意给定\(n\)个桔子，第\(i\)个桔子的大小为\(a[i]\)，按照给定顺序一次放入榨汁机榨果汁，能榨出\(a[i]\)多的果汁，只能将大小小于等于\(b\)的桔子放入，其余扔掉，且每次榨出的果汁和严格大于\(d\)时，就清空一次存储果汁的容易，求最终要清空多少次？
+思路 - 模拟按照题意模拟一遍即可，没有什么坑点">
+<meta property="og:updated_time" content="2016-09-04T09:14:51.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AIM Tech Round 3 (Div. 2 && Div. 1) [Codeforces709 && 708] | 留住了丶时间">
+<meta name="twitter:description" content="题目链接Div. 1Div. 2官方题解
+709 - A - Juicer题目大意给定\(n\)个桔子，第\(i\)个桔子的大小为\(a[i]\)，按照给定顺序一次放入榨汁机榨果汁，能榨出\(a[i]\)多的果汁，只能将大小小于等于\(b\)的桔子放入，其余扔掉，且每次榨出的果汁和严格大于\(d\)时，就清空一次存储果汁的容易，求最终要清空多少次？
+思路 - 模拟按照题意模拟一遍即可，没有什么坑点">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 留住了丶时间"><img src="/images/avatar.jpg" width="80" alt="留住了丶时间 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">留住了丶时间</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          旅游即是耻辱！
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/atom.xml" title="" class="">Rss</a></li>
+              
+                
+                <li class="navigation__item"><a href="/sitemap.xml" title="" class="">Sitemap</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/idealism-xxm" title="idealism-xxm on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+        <a href="http://weibo.com/u/2783861260" title="故事_已到終點">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">AIM Tech Round 3 (Div. 2 &amp;&amp; Div. 1) [Codeforces709 &amp;&amp; 708]</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-25" class="post-meta__date date">2016-08-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/ACM/">ACM</a>, <a class="categories-link" href="/categories/ACM/Contests/">Contests</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/">未补完</a>, <a class="categories-link" href="/categories/ACM/Contests/未补完/2016/">2016</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ACM/">ACM</a>, <a class="tags-link" href="/tags/Codeforces/">Codeforces</a>, <a class="tags-link" href="/tags/模拟/">模拟</a>, <a class="tags-link" href="/tags/贪心/">贪心</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>题目链接<br><a href="http://codeforces.com/contest/708" title="AIM Tech Round 3 (Div. 1)" target="_blank" rel="external">Div. 1</a><br><a href="http://codeforces.com/contest/709" title="AIM Tech Round 3 (Div. 2)" target="_blank" rel="external">Div. 2</a><br><a href="http://codeforces.com/blog/entry/46763" title="Codeforces Aim Tech Round 3 Editorial" target="_blank" rel="external">官方题解</a></p>
+<h1 id="709-A-Juicer"><a href="#709-A-Juicer" class="headerlink" title="709 - A - Juicer"></a>709 - A - Juicer</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定\(n\)个桔子，第\(i\)个桔子的大小为\(a[i]\)，按照给定顺序一次放入榨汁机榨果汁，能榨出\(a[i]\)多的果汁，只能将大小小于等于\(b\)的桔子放入，其余扔掉，且每次榨出的果汁和严格大于\(d\)时，就清空一次存储果汁的容易，求最终要清空多少次？</p>
+<h2 id="思路-模拟"><a href="#思路-模拟" class="headerlink" title="思路 - 模拟"></a>思路 - 模拟</h2><p>按照题意模拟一遍即可，没有什么坑点。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,b,d;</span><br><span class="line"><span class="keyword">int</span> a,ans,tot;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">3</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;b,&amp;d)) &#123;</span><br><span class="line">        ans=tot=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">            <span class="keyword">if</span>(a&lt;=b) &#123;</span><br><span class="line">                tot+=a;</span><br><span class="line">                <span class="keyword">if</span>(tot&gt;d) &#123;</span><br><span class="line">                    ++ans;</span><br><span class="line">                    tot=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="709-B-Checkpoints"><a href="#709-B-Checkpoints" class="headerlink" title="709 - B - Checkpoints"></a>709 - B - Checkpoints</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h2><p>在数轴上有\(n\)个检查点，第\(i\)的检查点的坐标为\(x[i]\)，有一个人初始在坐标为\(a\)的位置，求这个人到达至少\(n-1\)个检查点走过的最少距离？</p>
+<h2 id="思路-贪心"><a href="#思路-贪心" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h2><p>根据题意得至多有\(1\)个检查点不会走到，所以可以将所有检查点按坐标升序排序后，不会走到的点一定是最左边的点或者最右边的点，且有方向，所以共有\(4\)种走法，答案为其中最小值。<br><strong>注意：需要特判n=1时的情况，因为此时可以呆在原地</strong></p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,x,indx,ans;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100003</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>==<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;x)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,a+i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            sort(a,a+n);</span><br><span class="line">            ans=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">            ans=min(ans,<span class="built_in">abs</span>(x-a[<span class="number">0</span>])+<span class="built_in">abs</span>(a[n<span class="number">-2</span>]-a[<span class="number">0</span>]));</span><br><span class="line">            ans=min(ans,<span class="built_in">abs</span>(x-a[<span class="number">1</span>])+<span class="built_in">abs</span>(a[n<span class="number">-1</span>]-a[<span class="number">1</span>]));</span><br><span class="line">            ans=min(ans,<span class="built_in">abs</span>(a[n<span class="number">-1</span>]-x)+<span class="built_in">abs</span>(a[n<span class="number">-1</span>]-a[<span class="number">1</span>]));</span><br><span class="line">            ans=min(ans,<span class="built_in">abs</span>(a[n<span class="number">-2</span>]-x)+<span class="built_in">abs</span>(a[n<span class="number">-2</span>]-a[<span class="number">0</span>]));</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="708-A-Letters-Cyclic-Shift"><a href="#708-A-Letters-Cyclic-Shift" class="headerlink" title="708 - A - Letters Cyclic Shift"></a>708 - A - Letters Cyclic Shift</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个字符串，必须将一段非空子串中的每一个字母单独循环左移，求能获得的字典序最小的字符串？</p>
+<h2 id="思路-贪心-1"><a href="#思路-贪心-1" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h2><p>第一眼看到还以为是\(DP\)，和以前做过的题有点类似，但仔细一想，本题具有优先级，即改小时，修改越前面的越好，改大时，修改越后面的越好，所以就能想到贪心，只改变第一个非\(a\)起的到下一个\(a\)之前的这一段字符串，如果不存在则将最后一个字符变为\(z\)。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100007</span>];</span><br><span class="line"><span class="keyword">bool</span> start;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>==<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s)) &#123;</span><br><span class="line">        start=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;s[i]!=<span class="string">'\0'</span>;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(start) &#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i]==<span class="string">'a'</span>) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    --s[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]!=<span class="string">'a'</span>) &#123;</span><br><span class="line">                --s[i];</span><br><span class="line">                start=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!start) &#123;</span><br><span class="line">            s[i<span class="number">-1</span>]=<span class="string">'z'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="708-B-Recover-the-String"><a href="#708-B-Recover-the-String" class="headerlink" title="708 - B - Recover the String"></a>708 - B - Recover the String</h1><h2 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h2><p>构造一个\(01串\)，使得这个串满足子序列\(00,01,10,11\)的个数为\(a_{00},a_{01},a_{10},a_{11}\)，如果不存在则输出\(Impossible\)。</p>
+<h2 id="思路-构造"><a href="#思路-构造" class="headerlink" title="思路 - 构造"></a>思路 - 构造</h2><p>首先可以根据\(a_{00}和a_{11}\)通过\(C_n ^2 = a\)算出\(0和1\)的个数，如过不存在整数解，则无解，否则判断\(a_{01}+a_{10}==n_0*n_1\)是否成立，不成立则无解（因为对于每一个数字\(1\)，其左边的\(0\)的个数+其右边的\(0\)的个数等于\(n_0\)），然后构造出\(a_01\)个\(01\)子序列就好了，因为经过前面的判断，此时必定有解，且满足一个条件就能满足另一个。</p>
+<p>计算最左边的\(0\)的个数为\(l_0=\frac {a_{01} } {n_1}\)，则还剩下\(a _{ 01 } \% n_ 1\)个\(01\)序列需要构造，此时只需要\(1\)个\(0\)，让\(a_{01}%n_1\)个在这个\(0\)的右边，其余的在其左边即可完成构造。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l_0,l_1;<span class="comment">//分别表示01串中在最左边的0的个数和最左边的1的个数</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a00,a01,a10,a11,n0,n1,t,tmp;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1000003</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x,<span class="keyword">long</span> <span class="keyword">long</span> &amp;num)</span> </span>&#123;</span><br><span class="line">    tmp=<span class="number">1</span>+<span class="number">8</span>*x;</span><br><span class="line">    t=<span class="built_in">sqrt</span>(<span class="number">0.0</span>+tmp);</span><br><span class="line">    <span class="keyword">if</span>(t*t!=tmp) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    num=(<span class="number">1</span>+t)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">4</span>==<span class="built_in">scanf</span>(<span class="string">"%I64d%I64d%I64d%I64d"</span>,&amp;a00,&amp;a01,&amp;a10,&amp;a11)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a00+a01+a10+a11==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!judge(a00,n0)||!judge(a11,n1)) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a00+a01+a10==<span class="number">0</span>) &#123;<span class="comment">//由于a00=0时，有两个合法解，所以需要特判</span></span><br><span class="line">            <span class="keyword">while</span>(n1&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"1"</span>);</span><br><span class="line">                --n1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a01+a10+a11==<span class="number">0</span>) &#123;<span class="comment">//由于a11=0时，有两个合法解，所以需要特判</span></span><br><span class="line">            <span class="keyword">while</span>(n0&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">                --n0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n0*n1!=a01+a10) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            l_0=a01/n1;<span class="comment">//计算最左边的0的个数，最左边的每个0和所有1都能形成一个01</span></span><br><span class="line">            l_1=n1-a01%n1;<span class="comment">//计算最左边的1的个数，最右边的1必定有a01%n1，所以最左边的1有n1-a01%n1</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l_0;++i) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">                --n0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l_1;++i) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"1"</span>);</span><br><span class="line">                --n1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(n0&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">                --n0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(n1&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"1"</span>);</span><br><span class="line">                --n1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(n0&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">                --n0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="708-C-Centroids"><a href="#708-C-Centroids" class="headerlink" title="708 - C - Centroids"></a>708 - C - Centroids</h1><h2 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一棵树，判断每个点是否能至多移动一条边后使其成为重心？</p>
+<h2 id="思路-树形DP"><a href="#思路-树形DP" class="headerlink" title="思路 - 树形DP"></a>思路 - 树形DP</h2><p>看了题解后很快就知道如何写了，结果按照自己的方法更新\(mx\)数组，导致最后一直\(WA\)到第二天。。。</p>
+<p>令\(cnt[u]\)表示以\(u\)为根的子树的大小，\(mx[u]\)表示\(u\)的子树中能切下的最大的子树大小。<br>然后第一遍\(dfs\)更新\(cnt[]\)和\(mx[]\)，第二遍\(dfs\)就可以根据求得的结果计算\(ans[]\)。若一个点的某一个子树大于\(\frac {n} {2}\)并且该子树切去他能切下的最大子树后仍大于\(\frac {n} {2}\)，则答案为\(0\)，否则答案为\(1\)。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">400003</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node &#123;</span><br><span class="line">    <span class="keyword">int</span> v,nxt;</span><br><span class="line">&#125;edge[MAXN&lt;&lt;<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fir[MAXN],tot;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    edge[tot].v=v;</span><br><span class="line">    edge[tot].nxt=fir[u];</span><br><span class="line">    fir[u]=tot++;</span><br><span class="line"></span><br><span class="line">    edge[tot].v=u;</span><br><span class="line">    edge[tot].nxt=fir[v];</span><br><span class="line">    fir[v]=tot++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt[MAXN],mx[MAXN];<span class="comment">//cnt[u]表示以u为根的子树的大小，mx[u]表示以u的子树中，最大能切下的子树大小</span></span><br><span class="line"><span class="keyword">int</span> ans[MAXN],n,half;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">updateMx</span><span class="params">(<span class="keyword">int</span>&amp; fir_mx , <span class="keyword">int</span>&amp; sec_mx , <span class="keyword">int</span>&amp; fir_son , <span class="keyword">int</span> cur , <span class="keyword">int</span> son)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cur &lt;= half) &#123;</span><br><span class="line">        <span class="keyword">if</span>(fir_mx &lt; cur) &#123;</span><br><span class="line">            sec_mx = fir_mx;</span><br><span class="line">            fir_mx = cur;</span><br><span class="line">            fir_son = son;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(sec_mx &lt; cur) &#123;</span><br><span class="line">            sec_mx = cur;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsUp</span><span class="params">(<span class="keyword">int</span> u ,<span class="keyword">int</span> p)</span> </span>&#123;<span class="comment">//从下往上更新</span></span><br><span class="line">    cnt[u] = <span class="number">1</span>;</span><br><span class="line">    mx[u] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fir[u] ; i != <span class="number">-1</span> ; i = edge[i].nxt) &#123;</span><br><span class="line">        v=edge[i].v;</span><br><span class="line">        <span class="keyword">if</span>(v != p) &#123;</span><br><span class="line">            dfsUp(v,u);</span><br><span class="line">            cnt[u] += cnt[v];</span><br><span class="line">            mx[u] = max(mx[u] , cnt[v] &lt;= half ? cnt[v] : mx[v]);<span class="comment">//如果子树v的大小 小于等于half，则其是能切下的最大子树，否则是其子树中能切下的最大子树</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsDown</span><span class="params">(<span class="keyword">int</span> u , <span class="keyword">int</span> p , <span class="keyword">int</span> up_mx)</span> </span>&#123;<span class="comment">//从上往下更新</span></span><br><span class="line">    <span class="keyword">int</span> up_cnt = n - cnt[u] , fir_mx = (up_cnt &lt;= half ? up_cnt : <span class="number">0</span>) , sec_mx=<span class="number">0</span> , fir_son = <span class="number">0</span> , v;<span class="comment">//fir_mx表示u的某棵子树以上能剪去的最大子树</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fir[u] ; i != <span class="number">-1</span> ; i = edge[i].nxt) &#123;<span class="comment">//更新u的子树中的最大和次大</span></span><br><span class="line">        v = edge[i].v;</span><br><span class="line">        <span class="keyword">if</span>(v != p) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!updateMx(fir_mx , sec_mx , fir_son , cnt[v] , v)) &#123;<span class="comment">//刚开始这里没有判断（明明想到过，但是觉得并没有什么问题...），导致可能存在一棵子树既是最大又是次大，一直WA9...</span></span><br><span class="line">                updateMx(fir_mx , sec_mx , fir_son , mx[v] , v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ans[u] = up_cnt &lt;= half || up_cnt - up_mx &lt;= half ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fir[u] ; i != <span class="number">-1</span> ; i = edge[i].nxt) &#123;<span class="comment">//判断u的子树</span></span><br><span class="line">        v = edge[i].v;</span><br><span class="line">        <span class="keyword">if</span>(v != p) &#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[v] &gt; half &amp;&amp; cnt[v] - mx[v] &gt; half) &#123;<span class="comment">//如果u的子树中v子树大于half且去掉其最大的子树后仍大于half，则u不能成为重心</span></span><br><span class="line">                ans[u] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            dfsDown(v , u , max(up_mx , fir_son == v ? sec_mx : fir_mx));<span class="comment">//若最大来自于v，则fir_mx有可能是cnt[v]更新而来，此时要用次大</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> u,v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span> == <span class="built_in">scanf</span>(<span class="string">"%d"</span> , &amp;n)) &#123;</span><br><span class="line">        <span class="built_in">memset</span>(fir , <span class="number">-1</span> , <span class="keyword">sizeof</span>(fir));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; n ; ++i) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span> , &amp;u , &amp;v);</span><br><span class="line">            add(u , v);</span><br><span class="line">        &#125;</span><br><span class="line">        half = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        dfsUp(<span class="number">1</span> , <span class="number">0</span>);</span><br><span class="line">        dfsDown(<span class="number">1</span> , <span class="number">0</span> , <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; ++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d%c"</span> , ans[i] , i == n ? <span class="string">'\n'</span> : <span class="string">' '</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="708-D"><a href="#708-D" class="headerlink" title="708 - D -"></a>708 - D -</h1><h2 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路 -"></a>思路 -</h2><h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">﻿</span><br></pre></td></tr></table></figure>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/08/25/AIM Tech Round 3 (Div. 2 && Div. 1) [Codeforces709 && 708]/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"idealism-xxm"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79149014-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
