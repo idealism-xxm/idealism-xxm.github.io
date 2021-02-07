@@ -3435,7 +3435,10 @@ window.__require = function e(t, n, o) {
                             // 例如：三合一的难度， 4 个合成一个，则可获得 2 倍分数
                             a.default.score += (nodeFruitNumber + 1) * (count[ii] - window.combineNum + 1)
                             u.default.Instance.SetScoreTween(a.default.score)
-                            // 设置碰撞半径为 0
+                            // 保留 setTimeout 中会使用的值
+                            const position = node.position
+                            const width = node.width
+                            // 设置碰撞半径为 0 ，并直接销毁
                             nodes.forEach((other, j) => {
                                 if (getParent(j) !== ii) {
                                     return
@@ -3443,23 +3446,15 @@ window.__require = function e(t, n, o) {
 
                                 other.getComponent(cc.PhysicsCircleCollider).radius = 0
                                 other.getComponent(cc.PhysicsCircleCollider).apply()
+                                other.active = !1
+                                other.destroy()
                             })
 
-                            cc.tween(node).to(.1, {position: node.position}).call(function() {
+                            setTimeout(function() {
                                 // 创建新水果
-                                i.default.Instance.createFruitSui(nodeFruitNumber, node.position)
-                                i.default.Instance.createFruitL(nodeFruitNumber, node.position, node.width)
-                                i.default.Instance.createLevelUpFruit(nodeFruitNumber + 1, node.position)
-
-                                // 销毁原有水果
-                                nodes.forEach((other, j) => {
-                                    if (getParent(j) !== ii) {
-                                        return
-                                    }
-
-                                    other.active = !1
-                                    other.destroy()
-                                })
+                                i.default.Instance.createFruitSui(nodeFruitNumber, position)
+                                i.default.Instance.createFruitL(nodeFruitNumber, position, width)
+                                i.default.Instance.createLevelUpFruit(nodeFruitNumber + 1, position)
 
                                 // 还未合成大西瓜，则直接返回
                                 if (nodeFruitNumber !== 9) {
@@ -3491,7 +3486,7 @@ window.__require = function e(t, n, o) {
                                 c.runAction(cc.sequence(cc.spawn(cc.jumpBy(1, 0, 0, 300, 1), cc.scaleTo(1, 1)), cc.delayTime(1), cc.spawn(cc.moveTo(1, cc.v2(0, 500)), cc.scaleTo(1, 0)), cc.callFunc(function() {
                                     a.default.score += 100, u.default.Instance.SetScoreTween(a.default.score), e.active = !1, a.default.playerTouch = !0, c.destroy()
                                 })))
-                            }).start()
+                            }, 50)
                         })
                     }
 
