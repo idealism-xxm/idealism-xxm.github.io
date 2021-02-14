@@ -3332,7 +3332,53 @@ window.__require = function e(t, n, o) {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.levelNumber = 0, t.fruitNumber = 0, t.bianjieX = 0, t.pengzhuangCount = 0, t.notTargetTime = 0, t.returnNumber = !1, t.getNumberTime = 0, t.endCtrl = !1, t.endOne = 0, t.wallColl = 0, t.testEndDJS = 0, t
                 }
-                return o(t, e), t.prototype.onLoad = function() {}, t.prototype.start = function() {
+                return o(t, e), t.prototype.onLoad = function() {
+                    // 记录前一次的速度
+                    this.preAcc = {
+                        x: 0,
+                        y: 0,
+                        z: 0,
+                        timestamp: 0,
+                    }
+                    // 每个节点初始化一个范围在 [1, 1.5) 的随机值 ，作为速度系数
+                    this.random = 1 + 0.5 * Math.random()
+                    cc.systemEvent.setAccelerometerEnabled(true);
+                    cc.systemEvent.on(cc.SystemEvent.EventType.DEVICEMOTION, this.onDeviceMotionEvent, this);
+                }, t.prototype.onDestroy = function() {
+                    cc.systemEvent.off(cc.SystemEvent.EventType.DEVICEMOTION, this.onDeviceMotionEvent, this);
+                }, t.prototype.onDeviceMotionEvent = function(event) {
+                    // 如果未开启重力感应，则直接返回
+                    if (!window.accelerometerEnabled) {
+                        return
+                    }
+                    // 我们先只改变水平速度
+                    let linearVelocity = {
+                        x: event.acc.x * 960 * this.random,
+                        y: this.node.getComponent(cc.RigidBody).linearVelocity.y,
+                    }
+                    // 如果是颠勺动作，则增加一个向上的速度
+                    const deltaY = event.acc.y - this.preAcc.y
+                    const deltaTimestamp = event.acc.timestamp - this.preAcc.timestamp
+                    // -0.002 是一个阈值，这个值与 0 越接近，那么轻易晃动即可判定为颠勺
+                    if (deltaTimestamp && deltaY / deltaTimestamp < -0.0015) {
+                        console.log(this.mx, this.mn)
+                        if (linearVelocity.y < 0) {
+                            // 这里有向下的速度时，附加一个向上的速度
+                            linearVelocity.y += 320 * this.random
+                        } else {
+                            // 没有向下的速度时，直接给定向上的速度
+                            linearVelocity.y = 320 * this.random
+                        }
+                    }
+                    // 保存上一次的速度
+                    this.preAcc.x = event.acc.x
+                    this.preAcc.y = event.acc.y
+                    this.preAcc.z = event.acc.z
+                    this.preAcc.timestamp = event.acc.timestamp
+
+                    // 把这个速度信息赋给当前节点的刚体
+                    this.node.getComponent(cc.RigidBody).linearVelocity = linearVelocity
+                }, t.prototype.start = function() {
                     this.bianjieX = 360 - this.node.width / 2
                 }, t.prototype.update = function(e) {
                     var t = this;
@@ -3421,9 +3467,17 @@ window.__require = function e(t, n, o) {
 
                             // 这个时候就要开始执行合并后逻辑了
                             const nodeFruitNumber = node.getComponent('fruitData').fruitNumber
-                            // 大西瓜不能继续合成
                             if (nodeFruitNumber === 10) {
-                                return
+                                // 未开启无尽模式，大西瓜不能继续合成
+                                if (!window.endlessEnabled) {
+                                    return
+                                }
+                                // 开启无尽模式，大西瓜合成后分数翻倍
+                                a.default.score *= count[ii] - window.combineNum + 2
+                            } else {
+                                // 如果一次有 x 个水果一起合成，那么最后分数要乘以 x - window.combineNum + 1 倍
+                                // 例如：三合一的难度， 4 个合成一个，则可获得 2 倍分数
+                                a.default.score += (nodeFruitNumber + 1) * (count[ii] - window.combineNum + 1)
                             }
                             // 如果是 半个西瓜，则不再允许用户点击
                             if (nodeFruitNumber === 9) {
@@ -3431,9 +3485,6 @@ window.__require = function e(t, n, o) {
                             }
 
                             node.pengzhuangCount += 1
-                            // 如果一次有 x 个水果一起合成，那么最后分数要乘以 x - window.combineNum + 1 倍
-                            // 例如：三合一的难度， 4 个合成一个，则可获得 2 倍分数
-                            a.default.score += (nodeFruitNumber + 1) * (count[ii] - window.combineNum + 1)
                             u.default.Instance.SetScoreTween(a.default.score)
                             // 保留 setTimeout 中会使用的值
                             const position = node.position
@@ -3451,10 +3502,13 @@ window.__require = function e(t, n, o) {
                             })
 
                             setTimeout(function() {
-                                // 创建新水果
+                                // 水果合成声音和特效
                                 i.default.Instance.createFruitSui(nodeFruitNumber, position)
                                 i.default.Instance.createFruitL(nodeFruitNumber, position, width)
-                                i.default.Instance.createLevelUpFruit(nodeFruitNumber + 1, position)
+                                // 创建新水果
+                                if (nodeFruitNumber < 10) {
+                                    i.default.Instance.createLevelUpFruit(nodeFruitNumber + 1, position)
+                                }
 
                                 // 还未合成大西瓜，则直接返回
                                 if (nodeFruitNumber !== 9) {

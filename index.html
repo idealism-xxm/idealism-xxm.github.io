@@ -148,11 +148,28 @@
 
         }
 
-        window.combineNum = 2;
-        function changeCombineNum(ele, combineNum) {
+        window.combineNum = 2
+        function changeCombineNum(combineNum) {
             $('[name=combineNum]').css('background-color', '');
-            $(ele).css('background-color', '#1E9FFF');
+            $('[name=combineNum][value=' + combineNum + ']').css('background-color', '#1E9FFF');
             window.combineNum = combineNum;
+            localStorage.setItem('combineNum', combineNum)
+        }
+
+        window.accelerometerEnabled = false
+        function changeAccelerometerEnabled(accelerometerEnabled) {
+            $('[name=accelerometerEnabled]').css('background-color', '');
+            $('[name=accelerometerEnabled][value=' + accelerometerEnabled + ']').css('background-color', '#1E9FFF');
+            window.accelerometerEnabled = accelerometerEnabled;
+            localStorage.setItem('accelerometerEnabled', accelerometerEnabled)
+        }
+
+        window.endlessEnabled = false
+        function changeEndlessEnabled(endlessEnabled) {
+            $('[name=endlessEnabled]').css('background-color', '');
+            $('[name=endlessEnabled][value=' + endlessEnabled + ']').css('background-color', '#1E9FFF');
+            window.endlessEnabled = endlessEnabled;
+            localStorage.setItem('endlessEnabled', endlessEnabled)
         }
 
         layer.open({
@@ -169,15 +186,28 @@
             , moveType: 1 //拖拽模式，0或者1
             , content:
                 '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>模式选择</h4>'
-                + '<button name="combineNum" onclick="changeCombineNum(this, 1)">一消（原地升天）</button><br>'
-                + '<button name="combineNum" style="background-color:#1E9FFF" onclick="changeCombineNum(this, 2)">二消（原汁原味）</button><br>'
-                + '<button name="combineNum" onclick="changeCombineNum(this, 3)">三消（抓耳挠腮）</button><br>'
-                + '<button name="combineNum" onclick="changeCombineNum(this, 4)">四消（寸步难行）</button><br>'
-                + '<button name="combineNum" onclick="changeCombineNum(this, 5)">五消（进退无门）</button><br>'
-                + '<button name="combineNum" onclick="changeCombineNum(this, 6)">六消（束手待毙）</button><br>'
+                + '<button name="combineNum" value="1" style="margin: 2px" onclick="changeCombineNum(1)">一消（原地升天）</button>'
+                + '<button name="combineNum" value="2" style="margin: 2px" onclick="changeCombineNum(2)">二消（原汁原味）</button><br>'
+                + '<button name="combineNum" value="3" style="margin: 2px" onclick="changeCombineNum(3)">三消（抓耳挠腮）</button>'
+                + '<button name="combineNum" value="4" style="margin: 2px" onclick="changeCombineNum(4)">四消（寸步难行）</button><br>'
+                + '<button name="combineNum" value="5" style="margin: 2px" onclick="changeCombineNum(5)">五消（进退无门）</button>'
+                + '<button name="combineNum" value="6" style="margin: 2px" onclick="changeCombineNum(6)">六消（束手待毙）</button><br>'
+                + '</div>'
+                + '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>重力感应</h4>'
+                + '<button name="accelerometerEnabled" value="false" style="margin: 2px" onclick="changeAccelerometerEnabled(false)">关闭（安静上分）</button>'
+                + '<button name="accelerometerEnabled" value="true" style="margin: 2px" onclick="changeAccelerometerEnabled(true)">开启（欢乐颠勺）</button><br>'
+                + '</div>'
+                + '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>无尽模式<br><p>（大西瓜继续合成时分数翻倍）</p></h4>'
+                + '<button name="endlessEnabled" value="false" style="margin: 2px" onclick="changeEndlessEnabled(false)">关闭（最后亿把）</button>'
+                + '<button name="endlessEnabled" value="true" style="margin: 2px" onclick="changeEndlessEnabled(true)">开启（最后一把）</button><br>'
                 + '</div>',
 
-            success: function (layer) {}
+            success: function (layer) {
+                // 默认选中上次的配置
+                changeCombineNum(Number(localStorage.getItem('combineNum')) || 2)
+                changeAccelerometerEnabled(localStorage.getItem('accelerometerEnabled') === 'true')
+                changeEndlessEnabled(localStorage.getItem('endlessEnabled') === 'true')
+            }
         });
 
         var loadintT = document.getElementById("loadingText");
